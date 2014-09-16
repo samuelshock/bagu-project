@@ -10,8 +10,7 @@ var commentSchema = new Schema ({
 
 });
 var starsSchema = new Schema ({
-  votes  : { type: Number},
-  personVotes  : { type: Number},
+  vote  : { type: Number},
   registerDate  : { type: Date, default: Date.now }
 });
 

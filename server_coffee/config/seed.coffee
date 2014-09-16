@@ -2,8 +2,8 @@
 Populate DB with sample data on server start
 to disable, edit config/environment/index.js, and set `seedDB: false`
 ###
-Thing = require("../api/thing/thing.model")
-User = require("../api/user/user.model")
+Thing = require("../api/thing/thing-model")
+User = require("../api/user/user-model")
 Thing.find({}).remove ->
   Thing.create
     name: "Development Tools"

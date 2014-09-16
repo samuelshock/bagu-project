@@ -6,7 +6,7 @@ onSave = (socket, doc, cb) ->
 onRemove = (socket, doc, cb) ->
   socket.emit "publication:remove", doc
 
-Publication = require("./publication.model")
+Publication = require("./publication-model")
 exports.register = (socket) ->
   Publication.schema.post "save", (doc) ->
     onSave socket, doc

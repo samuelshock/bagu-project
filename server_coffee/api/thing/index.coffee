@@ -1,5 +1,5 @@
 express = require('express')
-controller = require('./publication.controller')
+controller = require('./thing-controller')
 
 router = express.Router()
 

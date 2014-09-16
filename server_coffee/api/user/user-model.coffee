@@ -1,3 +1,4 @@
+"use strict"
 mongoose = require("mongoose")
 Schema = mongoose.Schema
 crypto = require("crypto")
@@ -158,34 +159,34 @@ Methods
 ###
 UserSchema.methods =
 
-###
-Authenticate - check if the passwords are the same
+  ###
+  Authenticate - check if the passwords are the same
 
-@param {String} plainText
-@return {Boolean}
-@api public
-###
+  @param {String} plainText
+  @return {Boolean}
+  @api public
+  ###
   authenticate: (plainText) ->
     @encryptPassword(plainText) is @hashedPassword
 
 
-###
-Make salt
+  ###
+  Make salt
 
-@return {String}
-@api public
-###
+  @return {String}
+  @api public
+  ###
   makeSalt: ->
     crypto.randomBytes(16).toString "base64"
 
 
-###
-Encrypt password
+  ###
+  Encrypt password
 
-@param {String} password
-@return {String}
-@api public
-###
+  @param {String} password
+  @return {String}
+  @api public
+  ###
   encryptPassword: (password) ->
     return ""  if not password or not @salt
     salt = new Buffer(@salt, "base64")

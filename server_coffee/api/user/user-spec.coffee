@@ -1,6 +1,6 @@
 should = require("should")
 app = require("../../app")
-User = require("./user.model")
+User = require("./user-model")
 user = new User(
   provider: "local"
   name: "Fake User"

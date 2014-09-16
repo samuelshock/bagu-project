@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Publication = require('./publication.model');
+var User = require('../user/user.model');
 
 // Get list of publications
 exports.index = function(req, res) {
@@ -24,7 +25,7 @@ exports.show = function(req, res) {
 exports.create = function(req, res) {
   Publication.create(req.body, function(err, publication) {
     if(err) { return handleError(res, err); }
-
+//    User.findById(publication.owner, function)
     return res.json(201, publication);
   });
 };

@@ -16,9 +16,6 @@ starsSchema = new Schema(
   votes:
     type: Number
 
-  personVotes:
-    type: Number
-
   registerDate:
     type: Date
     default: Date.now
@@ -68,7 +65,7 @@ PublicationSchema = new Schema(
   isActive: Boolean
   city:
     type: String
-    required: true
+    lowercase: true
 
   province:
     type: String

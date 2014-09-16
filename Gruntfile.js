@@ -393,6 +393,9 @@ module.exports = function (grunt) {
         'jade',
         'stylus',
       ],
+      server_coffee: [
+        'coffee'
+      ],
       test: [
         'coffee',
         'jade',
@@ -491,6 +494,17 @@ module.exports = function (grunt) {
           dest: '.tmp',
           ext: '.js'
         }]
+      },
+       server_coffee:{
+         files: [{
+           expand: true,
+           src: [
+             'server_coffee/**/*.coffee',
+             '!server_coffee/**/*.spec.coffee'
+           ],
+           dest: 'build',
+           ext: '.js'
+         }]
       }
     },
 

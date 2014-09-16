@@ -1,5 +1,5 @@
 
-User = require("./user.model")
+User = require("./user-model")
 passport = require("passport")
 config = require("../../config/environment")
 jwt = require("jsonwebtoken")

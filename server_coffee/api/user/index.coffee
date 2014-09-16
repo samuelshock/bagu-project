@@ -1,5 +1,5 @@
 express = require('express')
-controller = require('./user.controller')
+controller = require('./user-controller')
 config = require('../../config/environment')
 auth = require('../../auth/auth.service')
 
