@@ -499,8 +499,7 @@ module.exports = function (grunt) {
          files: [{
            expand: true,
            src: [
-             'server_coffee/**/*.coffee',
-             '!server_coffee/**/*.spec.coffee'
+             'server_coffee/**/*.coffee'
            ],
            dest: 'build',
            ext: '.js'
