@@ -33,9 +33,9 @@
 //        li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
 //          a(href='', ng-click='logout()') Logout
 .header-nav.line-border
-.bagu-vertical-align-container
-    .bagu-valign-middle.bagu-title
-      | Bagu
+  .bagu-vertical-align-container
+      .bagu-valign-middle.bagu-title
+        | Bagu
 .header
   .super-title
     .title jalasoft
@@ -45,7 +45,8 @@
       | Soy el formulario
       input(type='text')
       input(type='button', value='Ok')
-  .menu-options.right-menu.text-option-menu Option1
+  .menu-options.right-menu.text-option-menu(ng-hide='isLoggedIn()', ng-class='{active: isActive("/signup")}')
+    a(href='/signup') Sign up
   .menu-options
     .search-menu
       input.text-field(type='text')

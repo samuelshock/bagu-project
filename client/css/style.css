@@ -110,7 +110,7 @@ html, body{
 .footer{
   height: 30px;
   background-color:black;
-  position: absolute;
+  /*position: absolute;*/
   bottom: 0;
   width: 100%;
   color:#fff;
