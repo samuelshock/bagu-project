@@ -18,6 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/place/place.socket').register(socket);
   require('../api/map/map.socket').register(socket);
   require('../api/publication/publication.socket').register(socket);
   require('../api/category/category.socket').register(socket);

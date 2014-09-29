@@ -12,7 +12,7 @@ handleError = (res, err) ->
   res.send 500, err
 "use strict"
 _ = require("lodash")
-Map = require("./map.model")
+Map = require("./map-model")
 exports.index = (req, res) ->
   Map.find (err, maps) ->
     return handleError(res, err)  if err

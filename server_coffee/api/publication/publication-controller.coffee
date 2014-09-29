@@ -14,7 +14,7 @@ handleError = (res, err) ->
 
 _ = require("lodash")
 Publication = require("./publication-manager")
-publicationManager = Publication.getInstance()
+publicationManager = new Publication
 Handler = require '../response-handler'
 
 exports.index = (req, res) ->

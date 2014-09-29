@@ -11,14 +11,19 @@ requiredProcessEnv = (name) ->
 # ============================================
 all =
   smtp:
-    host: "smtp.gmail.com"
-    secureConnection: false
-    port: 587
-    requiresAuth: true
-    domains: [ "gmail.com", "googlemail.com" ]
+    service: "hotmail"
     auth:
-      user: "artutobagu@gmail.com"
-      pass: "arturotapia"
+      user: "samuel7_3@hotmail.com"
+      pass: "6d696c64726564"
+
+#    host: "smtp.gmail.com"
+#    secureConnection: false
+#    port: 587
+#    requiresAuth: true
+#    domains: [ "gmail.com", "googlemail.com" ]
+#    auth:
+#      user: "artutobagu@gmail.com"
+#      pass: "arturotapia"
 
   env: process.env.NODE_ENV
 

@@ -3,6 +3,8 @@ mongoose = require("mongoose")
 Schema = mongoose.Schema
 crypto = require("crypto")
 authTypes = [ "github", "twitter", "facebook", "google" ]
+Q = require 'q'
+mailer = require '../../mailer/mail'
 messagesDoc = new Schema(
   remitter:
     type: Schema.Types.ObjectId
@@ -158,6 +160,18 @@ UserSchema.pre "save", (next) ->
 Methods
 ###
 UserSchema.methods =
+  ###
+  Adds a publication
+
+  @param publication [Publication]
+  ###
+  addPublication: (publication) ->
+    deferred = Q.defer()
+    @publications.push publication._id
+    @save (error) ->
+      deferred.reject error if error
+
+      deferred.resolve @
 
   ###
   Authenticate - check if the passwords are the same
