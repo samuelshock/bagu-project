@@ -22,3 +22,5 @@ class PlaceManager
     option =
       _id: id
     @placeManager.remove option
+
+    

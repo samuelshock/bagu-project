@@ -8,8 +8,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -20,7 +20,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -50,158 +50,69 @@ html, body{
   font-family: verdana;
   /*overflow: hidden;*/
 }
-
-.header{
-  height: 50px;
-  background-color:#444;
-  line-height: 50px;
-  /*overflow: hidden;*/
+.body {
+  height:100%;
+  width:100%;
+  overflow: auto;
+  zoom: 1;
+  background-color: rgba(156, 158, 156, 0.41);
+}
+.container {
+  /*margin-left: 200px;*/
+  /*background-color: blue;*/
 }
 
-.header .title{
-  font-size:20px;
-  color:#fff;
-  float: left;
-}
-
-.body{
-  height: 100%;
-  width: 100%;
-  background-color:#08c;
-}
-
-.header-nav {
-  height: 60px;
-  background-color:#009688;
-  /*background-color:#0B5505;*/
-}
-
-
-
-
-
-
-
-/*.body > .left-menu{
-  width: 250px;
-  height: 100%;
-  float: left;
-  background-color:#999;
-  overflow-x: hidden;
+.container.area {
+  height: 85%;
+  /*overflow-wrap: break-word;*/
   overflow-y: auto;
+  position: relative;
+  width: 70%;
+  float: left;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.container.header-top {
+  height:10%;
+  min-height: 110px;
+  /*background-color: green;*/
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-.body > .right-menu{
-  width: 250px;
-  height: 100%;
+.left-menu {
+  /*background-color: red;*/
+  float: left;
+  width: 15%;
+  height: 85%;
+}
+
+.right-menu {
+  /*background-color: red;*/
   float: right;
-  background-color:#999;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-*/
-.body > .content{
-  background-color:#f2f2f2;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  width: 15%;
+  height: 85%;
 }
 
-.footer{
-  height: 30px;
-  background-color:black;
+
+
+.footer {
   /*position: absolute;*/
+  border-style: solid none none none;
+  border-top-width: 1px;
+  border-top-color: darkgray;
   bottom: 0;
+  left: 0;
   width: 100%;
-  color:#fff;
+  height:150px;
+  background-color: rgba(237, 238, 241, 1);
 }
 
-.card{
-  border-radius: 10px;
-  box-shadow: #444 1px 1px 3px;
-  overflow: hidden;
-  background-color: #fff;
-}
-
-.card.people{
-  float: left;
-  margin: 10px;
-  height: 50px;
-  width: 180px;
-}
-
-.card.clearance{
-  margin: 10px;
-  height: 50px;
-  width: 180px;
-}
-
-.card.people .pic{
-  width: 50px;
-  height: 100%;
-  float: left;
-  background-color:#08c;
-}
-
-.card.people .name{
-  font-size: 12px;
-  height: 100%;
-  background-color:#f00;
-  overflow-y: auto; 
-}
-
-.table{
-  height: 100%;
-  display: table;
-}
-
-.cell{
-  display: table-cell;
-  vertical-align: middle;
-}
-
-/* Large desktop */
-@media (min-width: 1200px) { 
-
-  .header .nav-title {
-      font-size: 20px;
-
-  }
-
-  .body > .column-menu{
-  width: 250px;
-  height: 100%;
-  background-color:#999;
-  overflow-x: hidden;
-  overflow-y: auto;
-  }
-
-  .column-menu.right-menu{
-    float: right;
-  }
-
-  .column-menu.left-menu{
-    float: left;
-  }
-
- }
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) { 
-  .header {
 
-  }
-  .body > .column-menu{
-  display: none;
-  }
-
-  .column-menu.right-menu{
-    float: right;
-  }
-
-  .column-menu.left-menu{
-    float: left;
-  }
  }
  
 /* Landscape phone to portrait tablet */

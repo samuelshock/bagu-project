@@ -30,7 +30,12 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-view=""></div>
+    <div ng-include='"components/navbar/navbar.html"'></div>
+    <div class="left-menu"></div>
+    <section class="container area">
+      <div ng-view=""></div>
+    </section>
+    <div class="right-menu"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
