@@ -18,19 +18,19 @@
   height: 80px;
 }
 /* Vertical alignment */
-.fenix-vertical-align-container {
+.tagui-vertical-align-container {
   text-align: left;
   display: table;
   height: 100%;
   width: 100%;
 }
-.fenix-valign-middle {
+.tagui-valign-middle {
   display: table-cell;
   vertical-align: middle;
 }
 /* Cards */
-[class*="fenix-card"],
-[class*="fenix-rounded-card"] {
+[class*="tagui-card"],
+[class*="tagui-rounded-card"] {
   min-width: 220px;
   min-height: 80px;
   border-radius: 3px;
@@ -41,10 +41,10 @@
   font-size: 12px;
   overflow: hidden;
 }
-[class*="fenix-card"] .header,
-[class*="fenix-rounded-card"] .header,
-[class*="fenix-card"] .header.small,
-[class*="fenix-rounded-card"] .header.small {
+[class*="tagui-card"] .header,
+[class*="tagui-rounded-card"] .header,
+[class*="tagui-card"] .header.small,
+[class*="tagui-rounded-card"] .header.small {
   color: #fff;
   background-color: #444;
   font-size: 18px;
@@ -53,22 +53,22 @@
   line-height: 40px;
   padding: 0 0 0 20px;
 }
-[class*="fenix-card"] .header .header-icon-margin,
-[class*="fenix-rounded-card"] .header .header-icon-margin,
-[class*="fenix-card"] .header.small .header-icon-margin,
-[class*="fenix-rounded-card"] .header.small .header-icon-margin {
+[class*="tagui-card"] .header .header-icon-margin,
+[class*="tagui-rounded-card"] .header .header-icon-margin,
+[class*="tagui-card"] .header.small .header-icon-margin,
+[class*="tagui-rounded-card"] .header.small .header-icon-margin {
   margin: 5px;
 }
-[class*="fenix-card"] .header.small,
-[class*="fenix-rounded-card"] .header.small {
+[class*="tagui-card"] .header.small,
+[class*="tagui-rounded-card"] .header.small {
   font-size: 12px;
   height: 25px;
   line-height: 25px;
 }
-[class*="fenix-card"] .body,
-[class*="fenix-rounded-card"] .body,
-[class*="fenix-card"] .body.small,
-[class*="fenix-rounded-card"] .body.small {
+[class*="tagui-card"] .body,
+[class*="tagui-rounded-card"] .body,
+[class*="tagui-card"] .body.small,
+[class*="tagui-rounded-card"] .body.small {
   color: #444;
   background-color: #fff;
   width: 100%;
@@ -76,21 +76,21 @@
   font-size: 12px;
   min-height: 30px;
 }
-[class*="fenix-card"] .body .fenix-form-spacer,
-[class*="fenix-rounded-card"] .body .fenix-form-spacer {
+[class*="tagui-card"] .body .tagui-form-spacer,
+[class*="tagui-rounded-card"] .body .tagui-form-spacer {
   height: 5px;
   width: 100%;
 }
-[class*="fenix-card"] .body .fenix-form-label,
-[class*="fenix-rounded-card"] .body .fenix-form-label {
+[class*="tagui-card"] .body .tagui-form-label,
+[class*="tagui-rounded-card"] .body .tagui-form-label {
   color: #444;
   font-family: OpenSans-semibold;
   font-size: 10px;
   padding: 5px 0 0 0;
   margin: 0;
 }
-[class*="fenix-card"] .body .fenix-btn,
-[class*="fenix-rounded-card"] .body .fenix-btn {
+[class*="tagui-card"] .body .tagui-btn,
+[class*="tagui-rounded-card"] .body .tagui-btn {
   width: 180px;
   height: 30px;
   font-size: 12px;
@@ -99,37 +99,37 @@
   color: #fff;
   border-radius: 3px !important;
 }
-[class*="fenix-card"] .body .input[type="text"],
-[class*="fenix-rounded-card"] .body .input[type="text"],
-[class*="fenix-card"] .body .input[type="email"],
-[class*="fenix-rounded-card"] .body .input[type="email"] {
+[class*="tagui-card"] .body .input[type="text"],
+[class*="tagui-rounded-card"] .body .input[type="text"],
+[class*="tagui-card"] .body .input[type="email"],
+[class*="tagui-rounded-card"] .body .input[type="email"] {
   width: 180px !important;
 }
-[class*="fenix-card"] .body .fenix-input,
-[class*="fenix-rounded-card"] .body .fenix-input {
+[class*="tagui-card"] .body .tagui-input,
+[class*="tagui-rounded-card"] .body .tagui-input {
   width: 180px !important;
 }
-[class*="fenix-card"] .body .special-input-container,
-[class*="fenix-rounded-card"] .body .special-input-container {
+[class*="tagui-card"] .body .special-input-container,
+[class*="tagui-rounded-card"] .body .special-input-container {
   width: 180px !important;
   height: 30px;
 }
-[class*="fenix-card"] .body .special-input-container .left-icon,
-[class*="fenix-rounded-card"] .body .special-input-container .left-icon,
-[class*="fenix-card"] .body .special-input-container .right-icon,
-[class*="fenix-rounded-card"] .body .special-input-container .right-icon {
+[class*="tagui-card"] .body .special-input-container .left-icon,
+[class*="tagui-rounded-card"] .body .special-input-container .left-icon,
+[class*="tagui-card"] .body .special-input-container .right-icon,
+[class*="tagui-rounded-card"] .body .special-input-container .right-icon {
   float: left;
   margin-top: -31px;
   height: 30px;
 }
-[class*="fenix-card"] .body .special-input-container .right-icon,
-[class*="fenix-rounded-card"] .body .special-input-container .right-icon {
+[class*="tagui-card"] .body .special-input-container .right-icon,
+[class*="tagui-rounded-card"] .body .special-input-container .right-icon {
   float: right;
 }
-[class*="fenix-card"] .body .fenix-left-icon-input,
-[class*="fenix-rounded-card"] .body .fenix-left-icon-input,
-[class*="fenix-card"] .body .fenix-right-icon-input,
-[class*="fenix-rounded-card"] .body .fenix-right-icon-input {
+[class*="tagui-card"] .body .tagui-left-icon-input,
+[class*="tagui-rounded-card"] .body .tagui-left-icon-input,
+[class*="tagui-card"] .body .tagui-right-icon-input,
+[class*="tagui-rounded-card"] .body .tagui-right-icon-input {
   float: left;
   padding: 0 10px 0 30px !important;
   line-height: 20px;
@@ -137,12 +137,12 @@
   width: 180px;
   height: 30px;
 }
-[class*="fenix-card"] .body .fenix-right-icon-input,
-[class*="fenix-rounded-card"] .body .fenix-right-icon-input {
+[class*="tagui-card"] .body .tagui-right-icon-input,
+[class*="tagui-rounded-card"] .body .tagui-right-icon-input {
   padding: 0 30px 0 10px !important;
 }
-[class*="fenix-card"] .body .fenix-dropdown-container .fenix-dropdown /* FIX for bootstrap drop down menus */,
-[class*="fenix-rounded-card"] .body .fenix-dropdown-container .fenix-dropdown /* FIX for bootstrap drop down menus */ {
+[class*="tagui-card"] .body .tagui-dropdown-container .tagui-dropdown /* FIX for bootstrap drop down menus */,
+[class*="tagui-rounded-card"] .body .tagui-dropdown-container .tagui-dropdown /* FIX for bootstrap drop down menus */ {
   height: 30px !important;
   border-radius: 3px !important;
   color: #444 !important;
@@ -151,13 +151,13 @@
   text-align: left;
   border: #ccc 1px solid;
 }
-[class*="fenix-card"] .body .fenix-dropdown-container .fenix-dropdown /* FIX for bootstrap drop down menus */ .dropdown-icon-position,
-[class*="fenix-rounded-card"] .body .fenix-dropdown-container .fenix-dropdown /* FIX for bootstrap drop down menus */ .dropdown-icon-position {
+[class*="tagui-card"] .body .tagui-dropdown-container .tagui-dropdown /* FIX for bootstrap drop down menus */ .dropdown-icon-position,
+[class*="tagui-rounded-card"] .body .tagui-dropdown-container .tagui-dropdown /* FIX for bootstrap drop down menus */ .dropdown-icon-position {
   float: right;
   margin: -8px -15px 0 0;
 }
-[class*="fenix-card"] .body .fenix-dropdown-container .dropdown-menu,
-[class*="fenix-rounded-card"] .body .fenix-dropdown-container .dropdown-menu {
+[class*="tagui-card"] .body .tagui-dropdown-container .dropdown-menu,
+[class*="tagui-rounded-card"] .body .tagui-dropdown-container .dropdown-menu {
   padding: 0;
   border-radius: 3px !important;
   border: #ccc 1px solid;
@@ -168,36 +168,36 @@
   overflow: hidden;
   cursor: poiner;
 }
-[class*="fenix-card"] .body .fenix-dropdown-container .dropdown-menu [class*="icon"],
-[class*="fenix-rounded-card"] .body .fenix-dropdown-container .dropdown-menu [class*="icon"] {
+[class*="tagui-card"] .body .tagui-dropdown-container .dropdown-menu [class*="icon"],
+[class*="tagui-rounded-card"] .body .tagui-dropdown-container .dropdown-menu [class*="icon"] {
   margin-left: -5px;
   color: #444 !important;
 }
-[class*="fenix-card"] .body .fenix-dropdown-container .dropdown-menu li,
-[class*="fenix-rounded-card"] .body .fenix-dropdown-container .dropdown-menu li {
+[class*="tagui-card"] .body .tagui-dropdown-container .dropdown-menu li,
+[class*="tagui-rounded-card"] .body .tagui-dropdown-container .dropdown-menu li {
   margin: 0;
   padding: 0 0 0 10px;
   height: 30px;
   line-height: 30px;
   cursor: pointer;
 }
-[class*="fenix-card"] .body .fenix-dropdown-container .dropdown-menu li:hover,
-[class*="fenix-rounded-card"] .body .fenix-dropdown-container .dropdown-menu li:hover {
+[class*="tagui-card"] .body .tagui-dropdown-container .dropdown-menu li:hover,
+[class*="tagui-rounded-card"] .body .tagui-dropdown-container .dropdown-menu li:hover {
   background-color: #ededed;
 }
-[class*="fenix-card"] .body .fenix-dropdown-container .dropdown-menu .divider,
-[class*="fenix-rounded-card"] .body .fenix-dropdown-container .dropdown-menu .divider {
+[class*="tagui-card"] .body .tagui-dropdown-container .dropdown-menu .divider,
+[class*="tagui-rounded-card"] .body .tagui-dropdown-container .dropdown-menu .divider {
   height: 1px !important;
   margin: 0;
 }
-[class*="fenix-card"] .body.small,
-[class*="fenix-rounded-card"] .body.small {
+[class*="tagui-card"] .body.small,
+[class*="tagui-rounded-card"] .body.small {
   padding: 5px 10px 5px 10px;
 }
-[class*="fenix-card"] .footer,
-[class*="fenix-rounded-card"] .footer,
-[class*="fenix-card"] .footer.small,
-[class*="fenix-rounded-card"] .footer.small {
+[class*="tagui-card"] .footer,
+[class*="tagui-rounded-card"] .footer,
+[class*="tagui-card"] .footer.small,
+[class*="tagui-rounded-card"] .footer.small {
   color: #fff;
   background-color: #444;
   font-size: 18px;
@@ -206,45 +206,45 @@
   line-height: 40px;
   padding: 0 10px 0 10px;
 }
-[class*="fenix-card"] .footer.small,
-[class*="fenix-rounded-card"] .footer.small {
+[class*="tagui-card"] .footer.small,
+[class*="tagui-rounded-card"] .footer.small {
   font-size: 12px;
   height: 25px;
   line-height: 25px;
 }
-[class*="fenix-card"] .left-header,
-[class*="fenix-rounded-card"] .left-header {
+[class*="tagui-card"] .left-header,
+[class*="tagui-rounded-card"] .left-header {
   float: left;
   width: 80px;
   height: 100%;
 }
-[class*="fenix-card"] .right-body,
-[class*="fenix-rounded-card"] .right-body {
+[class*="tagui-card"] .right-body,
+[class*="tagui-rounded-card"] .right-body {
   height: 100%;
   overflow: hidden;
 }
 /* Rounded Cards */
-[class*="fenix-rounded-card"] {
+[class*="tagui-rounded-card"] {
   border-radius: 40px !important;
 }
-[class*="fenix-rounded-card"] .header {
+[class*="tagui-rounded-card"] .header {
   border-radius: 40px 40px 0 0;
   padding: 0 10px 0 20px;
 }
-[class*="fenix-rounded-card"] .body {
+[class*="tagui-rounded-card"] .body {
   border-radius: 0 0 40px 40px;
 }
-[class*="fenix-rounded-card"] .header-icon-margin {
+[class*="tagui-rounded-card"] .header-icon-margin {
   padding-top: 5px;
 }
-[class*="fenix-rounded-card"] .left-body {
+[class*="tagui-rounded-card"] .left-body {
   width: 140px;
   height: 100%;
   float: left;
   border-radius: 40px 0 0 40px;
   padding-left: 22px;
 }
-[class*="fenix-rounded-card"] .right-counter-circumference {
+[class*="tagui-rounded-card"] .right-counter-circumference {
   text-align: center;
   line-height: 60px;
   font-size: 18px;
@@ -254,12 +254,12 @@
   border-radius: 30px;
   float: left;
 }
-[class*="fenix-multiple-card-selection"] {
+[class*="tagui-multiple-card-selection"] {
   width: 220px;
   height: 80px;
   position: relative;
 }
-[class*="fenix-multiple-card-selection"] .right-counter-circumference {
+[class*="tagui-multiple-card-selection"] .right-counter-circumference {
   position: absolute;
   background-color: #000;
   color: #fff;
@@ -297,7 +297,7 @@
   position: absolute;
   border-radius: 6px;
   margin: -3px;
-  border: #0082ff 3px solid;
+  border: #8b008b 3px solid;
   opacity: 0;
   cursor: pointer;
 }
@@ -317,7 +317,7 @@
 }
 [class*="highligh-font-container"]:hover,
 [class*="highligh-font-container-contrast"]:hover {
-  color: #0082ff !important;
+  color: #8b008b !important;
 }
 [class*="highligh-font-container-contrast"]:hover {
   color: #fff !important;
@@ -395,7 +395,7 @@
   float: left;
 }
 /* People pictures */
-.fenix-small-person-pic-container {
+.tagui-small-person-pic-container {
   background-color: #ccc;
   border-radius: 35px;
   width: 70px;
@@ -403,13 +403,13 @@
   overflow: hidden;
   margin: 5px;
 }
-.fenix-small-person-pic {
+.tagui-small-person-pic {
   font-size: 84px;
   color: #999;
   margin: -2px 0 0 -6px;
 }
 /* Titles */
-.fenix-title {
+.tagui-title {
   color: #444;
   font-size: 40px;
   line-height: 40px;

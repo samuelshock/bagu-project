@@ -1,40 +1,31 @@
 //div(ng-include='"components/navbar/navbar.html"')
-.container
-  p
-    | The delete user and user index api routes are restricted to users with the 'admin' role.
+div(ng-switch='optionMenu')
+  ul.nav.nav-tabs.nav-justified(role='tablist')
+    li(ng-repeat='menu in menubar', ng-class='{active: checkValue(menu)}')
+      a(ng-click='changeMenuOption(menu)') {{menu}}
+
+  .container(ng-switch-when='Users')
+    p
+      | The delete user and user index api routes are restricted to users with the 'admin' role.
 
 
-  style
-    .custom-label{ font-size: 14px; padding-left: 5px; }
-  .fenix-card-w220-h80-layout.highlight-parent(ng-repeat='user in users')
-    .fenix-highlight-mouse-over-animated
-      .float-right.icon-delete-30px.animated-opacity.pointer.custom-margin-icon-close(ng-click='delete(user)')
-    .highlighted-container
-      .left-header
-        .fenix-vertical-align-container
-          .fenix-valign-middle
-            .fenix-small-person-pic-container
-              .fenix-small-person-pic.icon-person
-      .right-body
-        .fenix-vertical-align-container
-          .fenix-valign-middle.custom-label.fenix-font-semibold
-            strong {{user.name}}
-              br
-              | {{user.email}}
-
-  //div(ng-repeat='user in users')
-  //  .fenix-card-w220-h80-layout
-  //    .left-header
-  //      .fenix-vertical-align-container
-  //        .fenix-valign-middle
-  //          .fenix-small-person-pic-container
-  //            .fenix-small-person-pic.icon-person
-  //    .right-body
-  //      .fenix-vertical-align-container
-  //        .fenix-valign-middle
-  //          strong {{user.name}}
-  //          br
-  //          | {{user.email}}
+    style
+      .custom-label{ font-size: 14px; padding-left: 5px; }
+    .tagui-card-w220-h80-layout.highlight-parent(ng-repeat='user in users')
+      .tagui-highlight-mouse-over-animated
+        .float-right.icon-delete-30px.animated-opacity.pointer.custom-margin-icon-close(ng-click='delete(user)')
+      .highlighted-container
+        .left-header
+          .tagui-vertical-align-container
+            .tagui-valign-middle
+              .tagui-small-person-pic-container
+                .tagui-small-person-pic.icon-person
+        .right-body
+          .tagui-vertical-align-container
+            .tagui-valign-middle.custom-label.tagui-font-semibold
+              strong {{user.name}}
+                br
+                | {{user.email}}
 
 
   //ul.list-group(style='width: 400px;')

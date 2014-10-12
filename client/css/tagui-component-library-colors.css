@@ -1,167 +1,167 @@
 /* Import constants */
 /* Default layout font/icons colors */
-.fenix-color-a {
+.tagui-color-a {
   color: #000 !important;
 /* Black */
 }
-.fenix-color-b {
+.tagui-color-b {
   color: #fff !important;
 /* White */
 }
-.fenix-color-c {
+.tagui-color-c {
   color: #444 !important;
 /* Dark gray */
 }
-.fenix-color-d {
+.tagui-color-d {
   color: #0082ff !important;
 /* Light blue */
 }
-.fenix-color-e {
+.tagui-color-e {
   color: #678 !important;
 /* Cyan */
 }
-.fenix-color-f {
+.tagui-color-f {
   color: #ccc !important;
 /* Light gray */
 }
-.fenix-color-g {
+.tagui-color-g {
   color: #6c6c6c !important;
 /* Middle gray */
 }
-.fenix-color-h {
+.tagui-color-h {
   color: #093 !important;
 /* Green */
 }
-.fenix-color-i {
+.tagui-color-i {
   color: #999 !important;
 /* Middle gray 2 */
 }
 /* Default layout background colors */
-.fenix-bg-color-a {
+.tagui-bg-color-a {
   background-color: #000 !important;
 /* Black */
 }
-.fenix-bg-color-b {
+.tagui-bg-color-b {
   background-color: #fff !important;
 /* White */
 }
-.fenix-bg-color-c {
+.tagui-bg-color-c {
   background-color: #444 !important;
 /* Dark gray */
 }
-.fenix-bg-color-d {
+.tagui-bg-color-d {
   background-color: #0082ff !important;
 /* Light blue */
 }
-.fenix-bg-color-e {
+.tagui-bg-color-e {
   background-color: #678 !important;
 /* Cyan */
 }
-.fenix-bg-color-f {
+.tagui-bg-color-f {
   background-color: #ccc !important;
 /* Light gray */
 }
-.fenix-bg-color-g {
+.tagui-bg-color-g {
   background-color: #6c6c6c !important;
 /* Middle gray */
 }
-.fenix-bg-color-h {
+.tagui-bg-color-h {
   background-color: #093 !important;
 /* Green */
 }
-.fenix-bg-color-i {
+.tagui-bg-color-i {
   background-color: #999 !important;
 /* Middle gray 2 */
 }
 /* Default named font/icons colors */
-.fenix-color-white {
+.tagui-color-white {
   color: #fff !important;
 }
-.fenix-color-black {
+.tagui-color-black {
   color: #444 !important;
 }
-.fenix-color-gray {
+.tagui-color-gray {
   color: #888 !important;
 }
-.fenix-color-red {
+.tagui-color-red {
   color: #c33 !important;
 }
-.fenix-color-green {
+.tagui-color-green {
   color: #396 !important;
 }
-.fenix-color-blue {
+.tagui-color-blue {
   color: #36c !important;
 }
-.fenix-color-yellow {
+.tagui-color-yellow {
   color: #fb0 !important;
 }
-.fenix-color-brown {
+.tagui-color-brown {
   color: #963 !important;
 }
-.fenix-color-turquoise {
+.tagui-color-turquoise {
   color: #099 !important;
 }
-.fenix-color-violet {
+.tagui-color-violet {
   color: #93f !important;
 }
-.fenix-color-olive {
+.tagui-color-olive {
   color: #990 !important;
 }
-.fenix-color-orange {
+.tagui-color-orange {
   color: #f60 !important;
 }
-.fenix-color-magenta {
+.tagui-color-magenta {
   color: #f39 !important;
 }
-.fenix-color-light-blue {
+.tagui-color-light-blue {
   color: #39c !important;
 }
-.fenix-color-gold {
+.tagui-color-gold {
   color: #e90 !important;
 }
 /* Default named background colors */
-.fenix-bg-color-white {
+.tagui-bg-color-white {
   background-color: #fff !important;
 }
-.fenix-bg-color-black {
+.tagui-bg-color-black {
   background-color: #444 !important;
 }
-.fenix-bg-color-gray {
+.tagui-bg-color-gray {
   background-color: #888 !important;
 }
-.fenix-bg-color-red {
+.tagui-bg-color-red {
   background-color: #c33 !important;
 }
-.fenix-bg-color-green {
+.tagui-bg-color-green {
   background-color: #396 !important;
 }
-.fenix-bg-color-blue {
+.tagui-bg-color-blue {
   background-color: #36c !important;
 }
-.fenix-bg-color-yellow {
+.tagui-bg-color-yellow {
   background-color: #fb0 !important;
 }
-.fenix-bg-color-brown {
+.tagui-bg-color-brown {
   background-color: #963 !important;
 }
-.fenix-bg-color-turquoise {
+.tagui-bg-color-turquoise {
   background-color: #099 !important;
 }
-.fenix-bg-color-violet {
+.tagui-bg-color-violet {
   background-color: #93f !important;
 }
-.fenix-bg-color-olive {
+.tagui-bg-color-olive {
   background-color: #990 !important;
 }
-.fenix-bg-color-orange {
+.tagui-bg-color-orange {
   background-color: #f60 !important;
 }
-.fenix-bg-color-magenta {
+.tagui-bg-color-magenta {
   background-color: #f39 !important;
 }
-.fenix-bg-color-light-blue {
+.tagui-bg-color-light-blue {
   background-color: #39c !important;
 }
-.fenix-bg-color-gold {
+.tagui-bg-color-gold {
   background-color: #e90 !important;
 }

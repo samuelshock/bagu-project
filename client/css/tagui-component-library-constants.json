@@ -1,0 +1,54 @@
+{
+    "ACLARATIONS" : "Stylus does not support objects into json constants",
+
+    "TAGUI_FONT_FAMILY_NORMAL": "OpenSans",
+    "TAGUI_FONT_FAMILY_SEMI_BOLD": "OpenSans-semibold",
+    "TAGUI_FONT_FAMILY_LIGHT": "OpenSans-Light",
+
+    "TAGUI_COLOR_PRIMARY_BACKGROUNDS": "#444444",
+    "TAGUI_COLOR_NEUTRAL_BACKGROUNDS": "#667788",
+    "TAGUI_COLOR_PRIMARY_FONT": "#444444",
+    "TAGUI_COLOR_PRIMARY_FONT_CONTRAST": "#ffffff",
+    "TAGUI_COLOR_HIGHLIGHT": "#0082ff",
+    "TAGUI_COLOR_SELECTED_HIGHLIGHT": "#ffffff",
+
+    "TAGUI_APP_COLOR_001": "#000000 /* Black */",
+    "TAGUI_APP_COLOR_002": "#FFFFFF /* White */",
+    "TAGUI_APP_COLOR_003": "#444444 /* Dark gray */",
+    "TAGUI_APP_COLOR_004": "#0082FF /* Light blue */",
+    "TAGUI_APP_COLOR_005": "#667788 /* Cyan */",
+    "TAGUI_APP_COLOR_006": "#CCCCCC /* Light gray */",
+    "TAGUI_APP_COLOR_007": "#6C6C6C /* Middle gray */",
+    "TAGUI_APP_COLOR_008": "#009933 /* Green */",
+    "TAGUI_APP_COLOR_009": "#999999 /* Middle gray 2 */",
+
+    "TAGUI_COLOR_000": "#FFFFFF /* White */",
+    "TAGUI_COLOR_001": "#444444 /* Black */",
+    "TAGUI_COLOR_002": "#888888 /* Gray */",
+    "TAGUI_COLOR_003": "#CC3333 /* Red */",
+    "TAGUI_COLOR_004": "#339966 /* Green */",
+    "TAGUI_COLOR_005": "#3366CC /* Blue */",
+    "TAGUI_COLOR_006": "#FFBB00 /* Yellow */",
+    "TAGUI_COLOR_007": "#996633 /* Brown */",
+    "TAGUI_COLOR_008": "#009999 /* Turquoise */",
+    "TAGUI_COLOR_009": "#9933FF /* Violet */",
+    "TAGUI_COLOR_010": "#999900 /* Olive */",
+    "TAGUI_COLOR_011": "#FF6600 /* Orange */",
+    "TAGUI_COLOR_012": "#FF3399 /* Magenta */",
+    "TAGUI_COLOR_013": "#3399CC /* Light blue */",
+    "TAGUI_COLOR_014": "#EE9900 /* Gold */",
+
+    "TAGUI_CARDS_MIN_WIDTH": "220px",
+    "TAGUI_CARDS_MIN_HEIGHT": "80px",
+    "TAGUI_CARDS_RADIUS": "3px",
+    "TAGUI_ROUNDED_CARDS_RADIUS": "45px",
+
+    "TAGUI_CARDS_HEADER_HEIGHT": "40px",
+    "TAGUI_CARDS_FOOTER_HEIGHT": "40px",
+    "TAGUI_CARDS_SMALL_HEADER_HEIGHT": "25px",
+    "TAGUI_CARDS_SMALL_FOOTER_HEIGHT": "25px",
+    "TAGUI_CARDS_LEFT_HEADER_WIDTH": "80px",
+
+    "TAGUI_FOMRS_RADIUS": "3px"
+
+}

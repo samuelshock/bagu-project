@@ -45,7 +45,7 @@
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand(href='/') bagu
+        a.navbar-brand(href='/') Tagui
 
       div#navbar-main.navbar-collapse.collapse(collapse='isCollapsed')
         ul.nav.navbar-nav
@@ -61,30 +61,31 @@
           button.btn.btn-default(type='submit') Buscar
         ul.nav.navbar-nav.navbar-right
           li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/signup")}')
-            a(href='/signup') Sign up
+            a(href='/signup') Registrate
 
           li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/login")}')
-            a(href='/login') Login
+            a(href='/login') Ingresa
 
           li(ng-show='isLoggedIn()')
-            p.navbar-text Hello {{ getCurrentUser().name }}
+            p.navbar-text Hola {{ getCurrentUser().name }}
 
           li.dropdown(ng-show='isLoggedIn()', ng-class='{active: isActive("/settings")}')
             a.dropdown-toggle(href='#', data-toggle='dropdown')
-              span.glyphicon.glyphicon-cog
+              span.glyphicon.glyphicon-user(ng-show='!isAdmin()', ng-class='{active: !isActive("/admin")}')
+              span.glyphicon.glyphicon-cog(ng-show='isAdmin()', ng-class='{active: isActive("/admin")}')
             ul.dropdown-menu(role='menu')
+              //li
+              //  a(href='/settings') cambiar password
               li
-                a(href='/settings') cambiar password
-              li
-                a(href='#') Another action
-              li
-                a(href='#') Something else here
-              li.divider
-              li
-                a(href='#') Separated link
-              li.divider
-              li
-                a(href='#') One more separated link
+                a(href='/profile') Perfil
+              //li
+              //  a(href='#') Something else here
+              //li.divider
+              //li
+              //  a(href='#') Separated link
+              //li.divider
+              //li
+              //  a(href='#') One more separated link
 
           //
           //li(ng-show='isLoggedIn()', ng-class='{active: isActive("/settings")}')
@@ -92,7 +93,7 @@
           //    span.glyphicon.glyphicon-cog
 
           li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
-            a(href='', ng-click='logout()') Logout
+            a(href='', ng-click='logout()') Salir
 
   //nav.navbar.navbar-inverse(style='border-radius: 0px;', role='navigation')
   //  .container-fluid
