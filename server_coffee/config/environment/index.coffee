@@ -13,8 +13,8 @@ all =
   smtp:
     service: "hotmail"
     auth:
-      user: "samuel7_3@hotmail.com"
-      pass: "6d696c64726564"
+      user: "tagui.services@outlook.com"
+      pass: "Taguiservices-1"
 
 #    host: "smtp.gmail.com"
 #    secureConnection: false

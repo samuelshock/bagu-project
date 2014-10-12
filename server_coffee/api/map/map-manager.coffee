@@ -1,4 +1,4 @@
-MapModel = require("./map.model")
+MapModel = require("./map-model")
 BaseManager = require '../base-manager'
 
 
@@ -17,13 +17,13 @@ class MapManager
   findById: (id) ->
     @mapManager.findById id
 
-  createMap: (map) ->
+  create: (map) ->
     @mapManager.create map
 
-  updateMap: (newData) ->
+  update: (newData) ->
     @mapManager.update newData
 
-  deleteMap: (id) ->
+  delete: (id) ->
     option =
       _id: id
     @mapManager.remove option

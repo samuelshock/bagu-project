@@ -5,11 +5,11 @@ errors = require("./components/errors")
 module.exports = (app) ->
 
   # Insert routes below
-#  app.use "/api/maps", require("./api/map")
+  app.use '/api/arrangements', require('./api/arrangement')
+  app.use '/api/places', require('./api/place')
+  app.use "/api/maps", require("./api/map")
   app.use "/api/publications", require("./api/publication")
-#  app.use "/api/categories", require("./api/category")
-#  app.use "/api/messages", require("./api/message")
-  app.use "/api/things", require("./api/thing")
+  app.use "/api/categories", require("./api/category")
   app.use "/api/users", require("./api/user")
   app.use "/auth", require("./auth")
 

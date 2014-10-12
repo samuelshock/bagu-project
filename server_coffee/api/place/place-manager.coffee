@@ -4,7 +4,7 @@ BaseManager = require '../base-manager'
 class PlaceManager
 
   constructor: ->
-    @placeManager = new BaseManager PlaceManager
+    @placeManager = new BaseManager PlaceModel
 
   getAll: (filter = {}) ->
     @placeManager.find filter
@@ -12,15 +12,17 @@ class PlaceManager
   findById: (id) ->
     @placeManager.findById id
 
-  createMap: (map) ->
+  create: (map) ->
     @placeManager.create map
 
-  updateMap: (newData) ->
+  update: (newData) ->
     @placeManager.update newData
 
-  deleteMap: (id) ->
+  delete: (id) ->
     option =
       _id: id
     @placeManager.remove option
+
+module.exports = PlaceManager
 
     

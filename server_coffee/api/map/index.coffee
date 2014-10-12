@@ -1,5 +1,5 @@
 express = require('express')
-controller = require('./map.controller')
+controller = require('./map-controller')
 
 router = express.Router()
 

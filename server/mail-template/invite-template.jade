@@ -1,4 +1,8 @@
 #container
-  if playerInfo
-    h1 Complete your registration
-    p link to : #{playerInfo.url}
+  if userInfo
+    div(style='background-color: blueviolet;')
+      h1 Complete your registration
+    div #{userInfo.message}
+    p link to :
+      a(href='http://#{userInfo.url}')
+        |www.tagui.com

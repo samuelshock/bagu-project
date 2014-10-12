@@ -1,0 +1,54 @@
+{
+    "ACLARATIONS" : "Stylus does not support objects into json constants",
+
+    "FENIX_FONT_FAMILY_NORMAL": "OpenSans",
+    "FENIX_FONT_FAMILY_SEMI_BOLD": "OpenSans-semibold",
+    "FENIX_FONT_FAMILY_LIGHT": "OpenSans-Light",
+
+    "FENIX_COLOR_PRIMARY_BACKGROUNDS": "#444444",
+    "FENIX_COLOR_NEUTRAL_BACKGROUNDS": "#667788",
+    "FENIX_COLOR_PRIMARY_FONT": "#444444",
+    "FENIX_COLOR_PRIMARY_FONT_CONTRAST": "#ffffff",
+    "FENIX_COLOR_HIGHLIGHT": "#0082ff",
+    "FENIX_COLOR_SELECTED_HIGHLIGHT": "#ffffff",
+
+    "FENIX_APP_COLOR_001": "#000000 /* Black */",
+    "FENIX_APP_COLOR_002": "#FFFFFF /* White */",
+    "FENIX_APP_COLOR_003": "#444444 /* Dark gray */",
+    "FENIX_APP_COLOR_004": "#0082FF /* Light blue */",
+    "FENIX_APP_COLOR_005": "#667788 /* Cyan */",
+    "FENIX_APP_COLOR_006": "#CCCCCC /* Light gray */",
+    "FENIX_APP_COLOR_007": "#6C6C6C /* Middle gray */",
+    "FENIX_APP_COLOR_008": "#009933 /* Green */",
+    "FENIX_APP_COLOR_009": "#999999 /* Middle gray 2 */",
+
+    "FENIX_COLOR_000": "#FFFFFF /* White */",
+    "FENIX_COLOR_001": "#444444 /* Black */",
+    "FENIX_COLOR_002": "#888888 /* Gray */",
+    "FENIX_COLOR_003": "#CC3333 /* Red */",
+    "FENIX_COLOR_004": "#339966 /* Green */",
+    "FENIX_COLOR_005": "#3366CC /* Blue */",
+    "FENIX_COLOR_006": "#FFBB00 /* Yellow */",
+    "FENIX_COLOR_007": "#996633 /* Brown */",
+    "FENIX_COLOR_008": "#009999 /* Turquoise */",
+    "FENIX_COLOR_009": "#9933FF /* Violet */",
+    "FENIX_COLOR_010": "#999900 /* Olive */",
+    "FENIX_COLOR_011": "#FF6600 /* Orange */",
+    "FENIX_COLOR_012": "#FF3399 /* Magenta */",
+    "FENIX_COLOR_013": "#3399CC /* Light blue */",
+    "FENIX_COLOR_014": "#EE9900 /* Gold */",
+
+    "FENIX_CARDS_MIN_WIDTH": "220px",
+    "FENIX_CARDS_MIN_HEIGHT": "80px",
+    "FENIX_CARDS_RADIUS": "3px",
+    "FENIX_ROUNDED_CARDS_RADIUS": "45px",
+
+    "FENIX_CARDS_HEADER_HEIGHT": "40px",
+    "FENIX_CARDS_FOOTER_HEIGHT": "40px",
+    "FENIX_CARDS_SMALL_HEADER_HEIGHT": "25px",
+    "FENIX_CARDS_SMALL_FOOTER_HEIGHT": "25px",
+    "FENIX_CARDS_LEFT_HEADER_WIDTH": "80px",
+
+    "FENIX_FOMRS_RADIUS": "3px"
+
+}

@@ -3,6 +3,7 @@ Schema = mongoose.Schema
 commentSchema = new Schema(
   comment:
     type: String
+    trim: true
 
   registerDate:
     type: Date
@@ -27,6 +28,8 @@ PublicationSchema = new Schema(
 
   name:
     type: String
+    trim: true
+    unique: true
     required: true
 
   shortDescription:
@@ -38,37 +41,57 @@ PublicationSchema = new Schema(
 
   address:
     type: String
+    trim: true
+    unique: true
     required: true
+
+  web_site:
+    type: String
 
   phone:
     type: String
+    trim: true
+    unique: true
+    required: true
 
-  tags: [ type: String ]
+  tags: [
+    type: String
+    trim: true
+    unique: true
+  ]
+
   followers: [
     type: Schema.Types.ObjectId
     ref: "User"
   ]
+
   map:
     type: Schema.Types.ObjectId
     ref: "Map"
 
   stars: [ starsSchema ]
+
   comments: [ commentSchema ]
+
   images: [
     type: String
     default: "place.jpg"
   ]
+
   date:
     type: Date
     default: Date.now
 
   isActive: Boolean
+
   city:
     type: String
     lowercase: true
+    required: true
 
   province:
     type: String
+
 
   visits:
     type: Number
@@ -76,5 +99,9 @@ PublicationSchema = new Schema(
   priority:
     type: Number
     default: 3
+
+  arrangement:
+    type: Schema.Types.ObjectId
+    ref: 'Arrangement'
 )
 module.exports = mongoose.model("Publication", PublicationSchema)

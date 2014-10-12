@@ -17,6 +17,8 @@ Read the template for sending by email
 ###
 module.exports.readTemplate = (nameTemplate, params, callback) ->
   rootTemplate = path.join(path.resolve(__dirname, "../"), "mail-template/" + nameTemplate)
+  console.log '************************************'
+  console.log rootTemplate
   fs.readFile rootTemplate, "utf8", (err, data) ->
     unless err
       fn = jade.compile(data)
@@ -38,7 +40,7 @@ Send a mail
 @callback the function asynchronous
 ###
 module.exports.sendMail = (from, email, subj, message, callback) ->
-  transport = nodeMailer.createTransport("SMTP", config.smtp)
+  transport = nodeMailer.createTransport(config.smtp)
   options =
     from: from # sender address
     to: email # list of receivers

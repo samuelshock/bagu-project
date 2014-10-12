@@ -6,7 +6,7 @@ onSave = (socket, doc, cb) ->
 onRemove = (socket, doc, cb) ->
   socket.emit "map:remove", doc
 "use strict"
-Map = require("./map.model")
+Map = require("./map-model")
 exports.register = (socket) ->
   Map.schema.post "save", (doc) ->
     onSave socket, doc

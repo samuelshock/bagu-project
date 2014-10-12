@@ -1,10 +1,10 @@
-'use strict';
+(function() {
+  module.exports = {
+    mongo: {
+      uri: "mongodb://localhost/bagu-test"
+    }
+  };
 
-// Test specific configuration
-// ===========================
-module.exports = {
-  // MongoDB connection options
-  mongo: {
-    uri: 'mongodb://localhost/bagu-test'
-  }
-};
+}).call(this);
+
+//# sourceMappingURL=test.js.map

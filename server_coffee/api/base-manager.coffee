@@ -120,7 +120,10 @@ class DataManager
     deferred = Q.defer()
     @model.remove filter, (error, data) ->
       if error
-        deferred.reject error
+        err =
+          statusCode: 404
+          message: 'error occurred when trying to delete the document'
+        deferred.reject err
       else
         deferred.resolve data
     deferred.promise

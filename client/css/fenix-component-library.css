@@ -1,0 +1,416 @@
+
+/* Import constants */
+/* Set default fonts */
+[class*="-font-normal"] {
+  font-family: OpenSans !important;
+}
+[class*="-font-semibold"] {
+  font-family: OpenSans-semibold !important;
+}
+[class*="-font-ligth"] {
+  font-family: OpenSans-Light !important;
+}
+/* Cards default sizes */
+[class*="-w220"] {
+  width: 220px;
+}
+[class*="-h80"] {
+  height: 80px;
+}
+/* Vertical alignment */
+.fenix-vertical-align-container {
+  text-align: left;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.fenix-valign-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* Cards */
+[class*="fenix-card"],
+[class*="fenix-rounded-card"] {
+  min-width: 220px;
+  min-height: 80px;
+  border-radius: 3px;
+  background-color: #fff;
+  font-family: OpenSans;
+  color: #444;
+  box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
+  font-size: 12px;
+  overflow: hidden;
+}
+[class*="fenix-card"] .header,
+[class*="fenix-rounded-card"] .header,
+[class*="fenix-card"] .header.small,
+[class*="fenix-rounded-card"] .header.small {
+  color: #fff;
+  background-color: #444;
+  font-size: 18px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 0 0 20px;
+}
+[class*="fenix-card"] .header .header-icon-margin,
+[class*="fenix-rounded-card"] .header .header-icon-margin,
+[class*="fenix-card"] .header.small .header-icon-margin,
+[class*="fenix-rounded-card"] .header.small .header-icon-margin {
+  margin: 5px;
+}
+[class*="fenix-card"] .header.small,
+[class*="fenix-rounded-card"] .header.small {
+  font-size: 12px;
+  height: 25px;
+  line-height: 25px;
+}
+[class*="fenix-card"] .body,
+[class*="fenix-rounded-card"] .body,
+[class*="fenix-card"] .body.small,
+[class*="fenix-rounded-card"] .body.small {
+  color: #444;
+  background-color: #fff;
+  width: 100%;
+  padding: 10px 20px 10px 20px;
+  font-size: 12px;
+  min-height: 30px;
+}
+[class*="fenix-card"] .body .fenix-form-spacer,
+[class*="fenix-rounded-card"] .body .fenix-form-spacer {
+  height: 5px;
+  width: 100%;
+}
+[class*="fenix-card"] .body .fenix-form-label,
+[class*="fenix-rounded-card"] .body .fenix-form-label {
+  color: #444;
+  font-family: OpenSans-semibold;
+  font-size: 10px;
+  padding: 5px 0 0 0;
+  margin: 0;
+}
+[class*="fenix-card"] .body .fenix-btn,
+[class*="fenix-rounded-card"] .body .fenix-btn {
+  width: 180px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #0082ff;
+  font-family: OpenSans-semibold;
+  color: #fff;
+  border-radius: 3px !important;
+}
+[class*="fenix-card"] .body .input[type="text"],
+[class*="fenix-rounded-card"] .body .input[type="text"],
+[class*="fenix-card"] .body .input[type="email"],
+[class*="fenix-rounded-card"] .body .input[type="email"] {
+  width: 180px !important;
+}
+[class*="fenix-card"] .body .fenix-input,
+[class*="fenix-rounded-card"] .body .fenix-input {
+  width: 180px !important;
+}
+[class*="fenix-card"] .body .special-input-container,
+[class*="fenix-rounded-card"] .body .special-input-container {
+  width: 180px !important;
+  height: 30px;
+}
+[class*="fenix-card"] .body .special-input-container .left-icon,
+[class*="fenix-rounded-card"] .body .special-input-container .left-icon,
+[class*="fenix-card"] .body .special-input-container .right-icon,
+[class*="fenix-rounded-card"] .body .special-input-container .right-icon {
+  float: left;
+  margin-top: -31px;
+  height: 30px;
+}
+[class*="fenix-card"] .body .special-input-container .right-icon,
+[class*="fenix-rounded-card"] .body .special-input-container .right-icon {
+  float: right;
+}
+[class*="fenix-card"] .body .fenix-left-icon-input,
+[class*="fenix-rounded-card"] .body .fenix-left-icon-input,
+[class*="fenix-card"] .body .fenix-right-icon-input,
+[class*="fenix-rounded-card"] .body .fenix-right-icon-input {
+  float: left;
+  padding: 0 10px 0 30px !important;
+  line-height: 20px;
+  vertical-align: middle;
+  width: 180px;
+  height: 30px;
+}
+[class*="fenix-card"] .body .fenix-right-icon-input,
+[class*="fenix-rounded-card"] .body .fenix-right-icon-input {
+  padding: 0 30px 0 10px !important;
+}
+[class*="fenix-card"] .body .fenix-dropdown-container .fenix-dropdown /* FIX for bootstrap drop down menus */,
+[class*="fenix-rounded-card"] .body .fenix-dropdown-container .fenix-dropdown /* FIX for bootstrap drop down menus */ {
+  height: 30px !important;
+  border-radius: 3px !important;
+  color: #444 !important;
+  width: 180px !important;
+  font-size: 12px !important;
+  text-align: left;
+  border: #ccc 1px solid;
+}
+[class*="fenix-card"] .body .fenix-dropdown-container .fenix-dropdown /* FIX for bootstrap drop down menus */ .dropdown-icon-position,
+[class*="fenix-rounded-card"] .body .fenix-dropdown-container .fenix-dropdown /* FIX for bootstrap drop down menus */ .dropdown-icon-position {
+  float: right;
+  margin: -8px -15px 0 0;
+}
+[class*="fenix-card"] .body .fenix-dropdown-container .dropdown-menu,
+[class*="fenix-rounded-card"] .body .fenix-dropdown-container .dropdown-menu {
+  padding: 0;
+  border-radius: 3px !important;
+  border: #ccc 1px solid;
+  margin: -1px 0 0 0;
+  box-shadow: #ddd 0 2px 3px;
+  font-size: 13px;
+  width: 180px !important;
+  overflow: hidden;
+  cursor: poiner;
+}
+[class*="fenix-card"] .body .fenix-dropdown-container .dropdown-menu [class*="icon"],
+[class*="fenix-rounded-card"] .body .fenix-dropdown-container .dropdown-menu [class*="icon"] {
+  margin-left: -5px;
+  color: #444 !important;
+}
+[class*="fenix-card"] .body .fenix-dropdown-container .dropdown-menu li,
+[class*="fenix-rounded-card"] .body .fenix-dropdown-container .dropdown-menu li {
+  margin: 0;
+  padding: 0 0 0 10px;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+}
+[class*="fenix-card"] .body .fenix-dropdown-container .dropdown-menu li:hover,
+[class*="fenix-rounded-card"] .body .fenix-dropdown-container .dropdown-menu li:hover {
+  background-color: #ededed;
+}
+[class*="fenix-card"] .body .fenix-dropdown-container .dropdown-menu .divider,
+[class*="fenix-rounded-card"] .body .fenix-dropdown-container .dropdown-menu .divider {
+  height: 1px !important;
+  margin: 0;
+}
+[class*="fenix-card"] .body.small,
+[class*="fenix-rounded-card"] .body.small {
+  padding: 5px 10px 5px 10px;
+}
+[class*="fenix-card"] .footer,
+[class*="fenix-rounded-card"] .footer,
+[class*="fenix-card"] .footer.small,
+[class*="fenix-rounded-card"] .footer.small {
+  color: #fff;
+  background-color: #444;
+  font-size: 18px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px 0 10px;
+}
+[class*="fenix-card"] .footer.small,
+[class*="fenix-rounded-card"] .footer.small {
+  font-size: 12px;
+  height: 25px;
+  line-height: 25px;
+}
+[class*="fenix-card"] .left-header,
+[class*="fenix-rounded-card"] .left-header {
+  float: left;
+  width: 80px;
+  height: 100%;
+}
+[class*="fenix-card"] .right-body,
+[class*="fenix-rounded-card"] .right-body {
+  height: 100%;
+  overflow: hidden;
+}
+/* Rounded Cards */
+[class*="fenix-rounded-card"] {
+  border-radius: 40px !important;
+}
+[class*="fenix-rounded-card"] .header {
+  border-radius: 40px 40px 0 0;
+  padding: 0 10px 0 20px;
+}
+[class*="fenix-rounded-card"] .body {
+  border-radius: 0 0 40px 40px;
+}
+[class*="fenix-rounded-card"] .header-icon-margin {
+  padding-top: 5px;
+}
+[class*="fenix-rounded-card"] .left-body {
+  width: 140px;
+  height: 100%;
+  float: left;
+  border-radius: 40px 0 0 40px;
+  padding-left: 22px;
+}
+[class*="fenix-rounded-card"] .right-counter-circumference {
+  text-align: center;
+  line-height: 60px;
+  font-size: 18px;
+  margin: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  float: left;
+}
+[class*="fenix-multiple-card-selection"] {
+  width: 220px;
+  height: 80px;
+  position: relative;
+}
+[class*="fenix-multiple-card-selection"] .right-counter-circumference {
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 34px;
+  top: -10px;
+  right: -10px;
+  box-shadow: rgba(0,0,0,0.1) 0 0 1px;
+}
+/* Mouse over a card effect */
+.highlight-parent {
+  position: relative;
+  overflow: visible;
+}
+.highlight-parent .highlighted-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.highlight-parent .highlighted-rounded-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 45px;
+  overflow: hidden;
+}
+[class*="-highlight-mouse-over"],
+[class*="-highlight-mouse-over-rounded"] {
+  width: 226px;
+  height: 86px;
+  position: absolute;
+  border-radius: 6px;
+  margin: -3px;
+  border: #0082ff 3px solid;
+  opacity: 0;
+  cursor: pointer;
+}
+.selected-highlight {
+  border: #fff 3px solid !important;
+}
+[class*="-highlight-mouse-over-rounded"] {
+  border-radius: 45px;
+}
+[class*="-highlight-mouse-over"]:hover {
+  opacity: 1;
+}
+[class*="highligh-font-container"],
+[class*="highligh-font-container-contrast"] {
+  height: 100%;
+  width: 100%;
+}
+[class*="highligh-font-container"]:hover,
+[class*="highligh-font-container-contrast"]:hover {
+  color: #0082ff !important;
+}
+[class*="highligh-font-container-contrast"]:hover {
+  color: #fff !important;
+}
+/* Cards layout */
+[class*="-layout"] {
+  float: left;
+  margin: 20px 0 0 20px;
+}
+/*
+  Animations
+  This class animates all attributes on all DOM matches when some css property
+  changes
+*/
+[class*="animated"],
+.animated {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.animated-opacity {
+  opacity: 0.5;
+}
+.animated-opacity:hover {
+  opacity: 1;
+}
+.animated-color-a {
+  color: #444;
+}
+.animated-color-a:hover {
+  color: #0082ff;
+}
+.animated-color-b {
+  color: #444;
+}
+.animated-color-b:hover {
+  color: #fff;
+}
+/* Helper classes */
+.pointer {
+  cursor: pointer;
+}
+.rotate-180deg {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.middle-opacity {
+  opacity: 0.5;
+}
+.low-opacity-black-bg {
+  background-color: rgba(0,0,0,0.2);
+}
+.absolute-position {
+  position: absolute;
+}
+.multiple-selection-level-1-margin {
+  margin: 5px 0 0 -5px;
+}
+.multiple-selection-level-2-margin {
+  margin: 10px 0 0 -10px;
+}
+.show-overflow {
+  overflow: visible !important;
+}
+.hide-overflow {
+  overflow: hidden !important;
+}
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+/* People pictures */
+.fenix-small-person-pic-container {
+  background-color: #ccc;
+  border-radius: 35px;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  margin: 5px;
+}
+.fenix-small-person-pic {
+  font-size: 84px;
+  color: #999;
+  margin: -2px 0 0 -6px;
+}
+/* Titles */
+.fenix-title {
+  color: #444;
+  font-size: 40px;
+  line-height: 40px;
+}

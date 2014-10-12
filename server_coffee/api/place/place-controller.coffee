@@ -1,55 +1,54 @@
 
-
 # Get list of places
 
-# Get a single place
+# Get a single Place
 
-# Creates a new place in the DB.
+# Creates a new Place in the DB.
 
-# Updates an existing place in the DB.
+# Updates an existing Place in the DB.
 
-# Deletes a place from the DB.
-handleError = (res, err) ->
-  res.send 500, err
+# Deletes a Place from the DB.
+actionFactory = require '../action-factory'
+Place = actionFactory.getActionInstance 'place'
+responseHandler = require '../response-handler'
 
-_ = require("lodash")
-Place = require("./place.model")
 exports.index = (req, res) ->
-  Place.find (err, places) ->
-    return handleError(res, err)  if err
-    res.json 200, places
+  Place.getAll({})
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err
 
 
 exports.show = (req, res) ->
-  Place.findById req.params.id, (err, place) ->
-    return handleError(res, err)  if err
-    return res.send(404)  unless place
-    res.json place
+  Place.findById(req.params.id)
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err
 
 
 exports.create = (req, res) ->
-  Place.create req.body, (err, place) ->
-    return handleError(res, err)  if err
-    res.json 201, place
+  Place.create(req.body)
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err
 
 
 exports.update = (req, res) ->
-  delete req.body._id  if req.body._id
-  Place.findById req.params.id, (err, place) ->
-    return handleError(res, err)  if err
-    return res.send(404)  unless place
-    updated = _.merge(place, req.body)
-    updated.save (err) ->
-      return handleError(res, err)  if err
-      res.json 200, place
-
+  req.body._id = req.params.id unless req.body._id
+  Place.update(req.body)
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err
 
 
 exports.destroy = (req, res) ->
-  Place.findById req.params.id, (err, place) ->
-    return handleError(res, err)  if err
-    return res.send(404)  unless place
-    place.remove (err) ->
-      return handleError(res, err)  if err
-      res.send 204
+  Place.delete(req.params.id)
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err
 

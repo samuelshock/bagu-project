@@ -1,65 +1,66 @@
 
-# Get list of publications
+# Get list of maps
 
-# Get a single publication
+# Get a single Publication
 
-# Creates a new publication in the DB.
+# Creates a new Publication in the DB.
 
-# Updates an existing publication in the DB.
+# Updates an existing Publication in the DB.
 
-# Deletes a publication from the DB.
-handleError = (res, err) ->
-  res.send err.statusCode, err if err.statusCode
-  res.send 500, err
-
-_ = require("lodash")
-Publication = require("./publication-manager")
-publicationManager = new Publication
-Handler = require '../response-handler'
+# Deletes a Publication from the DB.
+actionFactory = require '../action-factory'
+Publication = actionFactory.getActionInstance 'publication'
+responseHandler = require '../response-handler'
 
 exports.index = (req, res) ->
   Publication.getAllPublication(true)
-  .then (publications) =>
-    Handler.handleSuccess res, publications
-  .fail (err) ->
-    Handler.handleError(res, err)
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err
 
 
 exports.show = (req, res) ->
-  Publication.findById req.params.id, (err, publication) ->
-    return handleError(res, err)  if err
-    return res.send(404)  unless publication
-    res.json publication
+  Publication.getPublicationById(req.params.id)
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err
 
 
 exports.create = (req, res) ->
-  Publication.create req.body, (err, publication) =>
-    return handleError(res, err)  if err
-    User.findById publication.owner, (err, user) ->
-      return handleError(res, err)  if err
-      user.publications.push publication._id
-      user.save (error) ->
-        return handleError(res, error)  if error
-        res.json 201, publication
+  Publication.createPublication(req.body)
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err
 
 
 exports.update = (req, res) ->
-  delete req.body._id  if req.body._id
-  Publication.findById req.params.id, (err, publication) ->
-    return handleError(res, err)  if err
-    return res.send(404)  unless publication
-    updated = _.merge(publication, req.body)
-    updated.save (err) ->
-      return handleError(res, err)  if err
-      res.json 200, publication
-
+  req.body._id = req.params.id unless req.body._id
+  Publication.updatePublication(req.body)
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err
 
 
 exports.destroy = (req, res) ->
-  Publication.findById req.params.id, (err, publication) ->
-    return handleError(res, err)  if err
-    return res.send(404)  unless publication
-    publication.remove (err) ->
-      return handleError(res, err)  if err
-      res.send 204
+  filter =
+    _id: req.params.id
+  Publication.deletePublication(filter)
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err
 
+
+
+
+#exports.destroy = (req, res) ->
+#  Publication.findById req.params.id, (err, map) ->
+#    return handleError(res, err)  if err
+#    return res.send(404)  unless map
+#    map.remove (err) ->
+#      return handleError(res, err)  if err
+#      res.send 204

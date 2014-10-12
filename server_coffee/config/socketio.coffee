@@ -14,12 +14,13 @@ onConnect = (socket) ->
 
 
   # Insert sockets below
-  require("../api/map/map.socket").register socket
+  require('../api/arrangement/arrangement-socket').register(socket)
+  require('../api/place/place-socket').register(socket)
+  require("../api/map/map-socket").register socket
   require("../api/publication/publication-socket").register socket
-  require("../api/category/category.socket").register socket
-  require("../api/message/message.socket").register socket
-  require("../api/thing/thing-socket").register socket
-"use strict"
+  require("../api/category/category-socket").register socket
+
+
 config = require("./environment")
 module.exports = (socketio) ->
 

@@ -1,12 +1,11 @@
-'use strict';
+(function() {
+  module.exports = {
+    mongo: {
+      uri: "mongodb://localhost/bagu-dev"
+    },
+    seedDB: true
+  };
 
-// Development specific configuration
-// ==================================
-module.exports = {
-  // MongoDB connection options
-  mongo: {
-    uri: 'mongodb://localhost/bagu-dev'
-  },
+}).call(this);
 
-  seedDB: true
-};
+//# sourceMappingURL=development.js.map

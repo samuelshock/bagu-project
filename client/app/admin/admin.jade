@@ -2,10 +2,46 @@
 .container
   p
     | The delete user and user index api routes are restricted to users with the 'admin' role.
-  ul.list-group(style='width: 400px;')
-    li.list-group-item(ng-repeat='user in users')
-      strong {{user.name}}
-      br
-      span.text-muted {{user.email}}
-      a.trash(ng-click='delete(user)')
-        span.glyphicon.glyphicon-trash.pull-right
+
+
+  style
+    .custom-label{ font-size: 14px; padding-left: 5px; }
+  .fenix-card-w220-h80-layout.highlight-parent(ng-repeat='user in users')
+    .fenix-highlight-mouse-over-animated
+      .float-right.icon-delete-30px.animated-opacity.pointer.custom-margin-icon-close(ng-click='delete(user)')
+    .highlighted-container
+      .left-header
+        .fenix-vertical-align-container
+          .fenix-valign-middle
+            .fenix-small-person-pic-container
+              .fenix-small-person-pic.icon-person
+      .right-body
+        .fenix-vertical-align-container
+          .fenix-valign-middle.custom-label.fenix-font-semibold
+            strong {{user.name}}
+              br
+              | {{user.email}}
+
+  //div(ng-repeat='user in users')
+  //  .fenix-card-w220-h80-layout
+  //    .left-header
+  //      .fenix-vertical-align-container
+  //        .fenix-valign-middle
+  //          .fenix-small-person-pic-container
+  //            .fenix-small-person-pic.icon-person
+  //    .right-body
+  //      .fenix-vertical-align-container
+  //        .fenix-valign-middle
+  //          strong {{user.name}}
+  //          br
+  //          | {{user.email}}
+
+
+  //ul.list-group(style='width: 400px;')
+  //  li.list-group-item(ng-repeat='user in users')
+  //
+  //    strong {{user.name}}
+  //    br
+  //    span.text-muted {{user.email}}
+  //    a.trash(ng-click='delete(user)')
+  //      span.glyphicon.glyphicon-trash.pull-right

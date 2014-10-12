@@ -1,5 +1,5 @@
 express = require 'express'
-controller = require './place.controller'
+controller = require './place-controller'
 
 router = express.Router()
 

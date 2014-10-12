@@ -1,0 +1,177 @@
+/*
+  CSS Explanation
+  [class^="class-name"]
+  Matches all classes starting with class-name
+  E.g. class-name-new-prop
+       class-name-other
+
+  [class$="class-name"]
+  Matches all classes ending with class-name
+  E.g. something-class-name
+       other-class-name
+
+  [class*="class-name"]
+  Matches all classes containing class-name
+  E.g. something-class-name-40px
+       other-class-name
+       class-name
+*/
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?-ahi9ey");
+  src: url("../fonts/icomoon.eot?#iefix-ahi9ey") format('embedded-opentype'), url("../fonts/icomoon.woff?-ahi9ey") format('woff'), url("../fonts/icomoon.ttf?-ahi9ey") format('truetype'), url("../fonts/icomoon.svg?-ahi9ey#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Default sizes */
+[class*="-40px"] {
+  font-size: 40px;
+}
+[class*="-32px"] {
+  font-size: 32px;
+}
+[class*="-30px"] {
+  font-size: 30px;
+}
+[class*="-29px"] {
+  font-size: 29px;
+}
+[class*="-28px"] {
+  font-size: 28px;
+}
+[class*="-27px"] {
+  font-size: 27px;
+}
+[class*="-26px"] {
+  font-size: 26px;
+}
+[class*="-25px"] {
+  font-size: 25px;
+}
+[class*="-24px"] {
+  font-size: 25px;
+}
+[class*="-23px"] {
+  font-size: 25px;
+}
+[class*="-22px"] {
+  font-size: 25px;
+}
+[class*="-21px"] {
+  font-size: 25px;
+}
+[class*="-20px"] {
+  font-size: 20px;
+}
+/* Icons defaults */
+[class*="icon-"],
+[class*=" icon-"] {
+  font-family: 'icomoon';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: inline-block;
+  line-height: 1;
+  speak: none;
+/* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class*="icon-add"]:before {
+  content: "\e600";
+}
+[class*="icon-add_button"]:before {
+  content: "\e601";
+}
+[class*="icon-board"]:before {
+  content: "\e602";
+}
+[class*="icon-building"]:before {
+  content: "\e603";
+}
+[class*="icon-camera"]:before {
+  content: "\e604";
+}
+[class*="icon-clear_field"]:before {
+  content: "\e605";
+}
+[class*="icon-clearance"]:before {
+  content: "\e606";
+}
+[class*="icon-close"]:before {
+  content: "\e608";
+}
+[class*="icon-close_button"]:before {
+  content: "\e607";
+}
+[class*="icon-combobox_field"]:before {
+  content: "\e609";
+}
+[class*="icon-delete"]:before {
+  content: "\e60b";
+}
+[class*="icon-delete_button"]:before {
+  content: "\e60a";
+}
+[class*="icon-direction"]:before {
+  content: "\e60d";
+}
+[class*="icon-direction_small"]:before {
+  content: "\e60c";
+}
+[class*="icon-done"]:before {
+  content: "\e60e";
+}
+[class*="icon-dropdown"]:before {
+  content: "\e610";
+}
+[class*="icon-dropdown_field"]:before {
+  content: "\e60f";
+}
+[class*="icon-edit_button"]:before {
+  content: "\e611";
+}
+[class*="icon-filter"]:before {
+  content: "\e612";
+}
+[class*="icon-people"]:before {
+  content: "\e613";
+}
+[class*="icon-person"]:before {
+  content: "\e614";
+}
+[class*="icon-search"]:before {
+  content: "\e615";
+}
+[class*="icon-settings"]:before {
+  content: "\e616";
+}
+[class*="icon-visitors"]:before {
+  content: "\e617";
+}
+@-webkit-keyframes infinite-rotation {
+  0% {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+[class*="icon-spinner"]:before {
+  content: "\e618";
+  -webkit-animation: infinite-rotation 0.8s linear infinite;
+  -moz-animation: infinite-rotation 0.8s linear infinite;
+  -ms-animation: infinite-rotation 0.8s linear infinite;
+  -o-animation: infinite-rotation 0.8s linear infinite;
+  animation: infinite-rotation 0.8s linear infinite;
+}

@@ -6,7 +6,7 @@ onSave = (socket, doc, cb) ->
 onRemove = (socket, doc, cb) ->
   socket.emit "place:remove", doc
 
-Place = require("./place.model")
+Place = require("./place-model")
 exports.register = (socket) ->
   Place.schema.post "save", (doc) ->
     onSave socket, doc

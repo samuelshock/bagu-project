@@ -29,10 +29,10 @@ exports.create = (req, res, next) ->
   newUser.save (err, user) ->
     return validationError(res, err)  if err
     email = newUser.email
-    subject = "Bagu: Complete Sign up  ✔"
-    from = "Bagu Admin ✔ <bagu@gmail.com>"
-    params = playerInfo:
-      url: "test"
+    subject = "Tagui: Complete Sign up  ✔"
+    from = "Bagu Admin ✔ <tagui.services@outlook.com>"
+    params = userInfo:
+      url: "localhost:9000"
       message: "Gracias por registrarte a la pagina mas grande de Bolivia donde puedes" + "encontrar lo que tu necesitas para salir restaurants ,hoteles ,puestos de comida" + "y muchos lugares mas."
 
     setTimeout (->

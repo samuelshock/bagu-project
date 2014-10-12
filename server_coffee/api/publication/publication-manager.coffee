@@ -1,7 +1,9 @@
 
 PublicationModel = require './publication-model'
+BaseManager = require '../base-manager'
+MapManager = require('../action-factory').getActionInstance('map')
+CategoryManager = require('../action-factory').getActionInstance('category')
 User = require('../user/user-model')
-Map = require('../map/map-manager')
 _ = require("lodash")
 
 Q = require 'q'
@@ -17,7 +19,9 @@ ALL_INFO = "#{BASIC_INFO} description phone tags map comments comments.person"
 class PublicationManager
 
   constructor: ->
+    @publicationManager = BaseManager PublicationModel
     console.log 'instance of publication'
+
 
 #  instance = null
 #  # Static singleton
@@ -114,14 +118,16 @@ class PublicationManager
   ###
   createPublication: (publication) ->
     deferred = Q.defer()
-    PublicationModel.create publication, (err, publication) =>
+
+    @publicationManager.create(publication)
+    .then (publication) =>
       deferred.reject err if err
       User.findById publication.owner, (err, user) =>
         deferred.reject err if err
         user.addPublication(publication)
         .then (user) ->
           deferred.resolve publication
-        .fail (error) ->
+    .fail (error) ->
           deferred.reject error
     deferred.promise
 

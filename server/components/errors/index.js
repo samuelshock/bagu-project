@@ -1,20 +1,27 @@
-/**
- * Error responses
+
+/*
+Error responses
  */
 
-'use strict';
+(function() {
+  var pageNotFound;
 
-module.exports[404] = function pageNotFound(req, res) {
-  var viewFilePath = '404';
-  var statusCode = 404;
-  var result = {
-    status: statusCode
+  module.exports[404] = pageNotFound = function(req, res) {
+    var result, statusCode, viewFilePath;
+    viewFilePath = "404";
+    statusCode = 404;
+    result = {
+      status: statusCode
+    };
+    res.status(result.status);
+    return res.render(viewFilePath, function(err) {
+      if (err) {
+        return res.json(result, result.status);
+      }
+      return res.render(viewFilePath);
+    });
   };
 
-  res.status(result.status);
-  res.render(viewFilePath, function (err) {
-    if (err) { return res.json(result, result.status); }
+}).call(this);
 
-    res.render(viewFilePath);
-  });
-};
+//# sourceMappingURL=index.js.map
