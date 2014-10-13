@@ -10,6 +10,9 @@ angular.module 'baguApp'
       params:
         controller: 'password'
 
+    update:
+      method: 'PUT'
+
     get:
       method: 'GET'
       params:

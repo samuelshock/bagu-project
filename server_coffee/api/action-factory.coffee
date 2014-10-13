@@ -5,8 +5,8 @@ actionsMap =
     "ClassAction": "./map/map-manager"
   "publication":
     "ClassAction": "./publication/publication-manager"
-#  "user":
-#    "ClassAction": "./actions/area-actions"
+  "user":
+    "ClassAction": "./user/user-manager"
   "category":
     "ClassAction": "./category/category-manager"
   "arrangement":

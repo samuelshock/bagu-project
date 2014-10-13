@@ -14,6 +14,10 @@
 [class*="-w220"] {
   width: 220px;
 }
+[class*="wxx"] {
+  width: 100%;
+}
+
 [class*="-h80"] {
   height: 80px;
 }
@@ -408,6 +412,14 @@
   color: #999;
   margin: -2px 0 0 -6px;
 }
+
+.tagui-xsmall-person-pic {
+  font-size: 38px;
+  color: #ffffff;
+  margin: 0 0 0 -15px;
+}
+
+
 /* Titles */
 .tagui-title {
   color: #444;

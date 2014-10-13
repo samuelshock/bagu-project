@@ -86,6 +86,27 @@ angular.module 'baguApp'
 
     .$promise
 
+  ###
+  Update user
+
+  @param  {Object}   newPerson
+  @param  {Function} callback    - optional
+  @return {Promise}
+  ###
+  update: (newPerson, callback) ->
+    User.update
+      id: currentUser._id
+    ,
+      newPerson
+
+    , (user) ->
+      callback? user
+
+    , (err) ->
+      callback? err
+
+    .$promise
+
 
   ###
   Gets all available info on authenticated user

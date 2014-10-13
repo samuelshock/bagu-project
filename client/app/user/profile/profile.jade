@@ -1,0 +1,74 @@
+.col-md-12
+  .tagui-card-w220-layout
+    .header
+      .left-header(style='width: 20px')
+        .tagui-vertical-align-container
+          .tagui-valign-middle
+            .tagui-xsmall-person-pic.icon-people
+      .right-body
+        .tagui-vertical-align-container(style='font-family: sans-serif')
+          .tagui-valign-middle.custom-label.tagui-font-semibold
+          | Informacion Personal
+
+    .body
+      .tagui-form-label(style='font-size: large', ng-hide='isEditing') Nombre: {{user.name}}
+      .tagui-form-label(style='font-size: large', ng-hide='!isEditing') Nombre:
+      input.form-control(type='text', value='{{newPersonData.name}}', ng-hide='!isEditing')
+      //.tagui-form-spacer
+      //.tagui-form-spacer
+      //.tagui-form-label Apellido: {{user.
+      //input.form-control(type='text', placeholder='Enter your name')
+      .tagui-form-spacer
+      .tagui-form-label(style='font-size: large', ng-hide='isEditing') Email: {{user.email}}
+      .tagui-form-label(style='font-size: large', ng-hide='!isEditing') Email:
+      input.form-control(type='email', value='{{newPersonData.email}}', ng-hide='!isEditing')
+      .tagui-form-spacer
+      .tagui-form-spacer
+      .tagui-form-spacer
+      a(ng-click='enableEdit()', ng-hide='isEditing') Editar
+      input.tagui-btn.btn(type='button', value='Editar', ng-hide='!isEditing', ng-click='edit()')
+      .tagui-form-spacer
+      input.tagui-btn.btn(type='button', value='Cancelar', ng-hide='!isEditing', ng-click='cancel()')
+
+
+
+//#content.row
+//  .col-md-2
+//  .col-md-10
+//    .panel.panel-primary(style='height: auto;')
+//      .panel-body
+//        h1 {{userBagu.name}}
+//        h4 Email: {{userBagu.email}}
+//        h4 te registraste el {{userBagu.registerDate}}
+//.col-md-12
+
+
+
+  .col-md-4(ng-switch='option')
+    tabset(vertical='true', type='pills')
+      tab(ng-repeat='tab in tabs', heading='{{tab.title}}', active='tab.active', disabled='tab.disabled')
+
+    .col-md-8
+      .panel.panel-primary(style='height: auto;')
+        .panel-heading {{option}}
+        .panel-body
+          div(ng-switch='option')
+            div(ng-switch-when='comentarios')
+              select.form-control(ng-repeat='publication in userBagu.publications', ng-click='setSelected(publication)')
+                option.form-control
+                  h3 {{publication.name}}
+              hr
+              .alert.alert-info(ng-repeat='comment in selectedpublication.comments')
+                p
+                  h3
+                    | {{comment.person.name}}
+                    span(style='float: right;') {{comment.registerDate}}
+                h6 {{comment.comment}}
+            div(ng-switch-when='notificaciones')
+              input.form-control(type='text', value='3')
+            div(ng-switch-when='pagos')
+              input.form-control(type='text', value='Name')
+            div(ng-switch-when='favoritos')
+              input.form-control(type='text', value='Name')
+            div(ng-switch-when='publicaciones')
+            |publicaciones

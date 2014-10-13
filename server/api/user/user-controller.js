@@ -1,15 +1,21 @@
 (function() {
-  var User, config, jwt, mailer, passport, validationError;
+  var User, UserManager, actionFactory, config, jwt, mailer, passport, responseHandler, validationError;
 
   User = require("./user-model");
 
   passport = require("passport");
 
-  config = require("../../config/environment/index");
+  config = require("../../config/environment");
 
   jwt = require("jsonwebtoken");
 
   mailer = require("../../mailer/mail");
+
+  actionFactory = require('../action-factory');
+
+  UserManager = actionFactory.getActionInstance('user');
+
+  responseHandler = require('../response-handler');
 
   validationError = function(res, err) {
     return res.json(422, err);
@@ -46,8 +52,8 @@
         return validationError(res, err);
       }
       email = newUser.email;
-      subject = "Bagu: Complete Sign up  ✔";
-      from = "Bagu Admin ✔ <bagu@gmail.com>";
+      subject = "Tagui: Complete Sign up  ✔";
+      from = "Bagu Admin ✔ <tagui.services@outlook.com>";
       params = {
         userInfo: {
           url: "localhost:9000",
@@ -171,7 +177,20 @@
   Update User
    */
 
-  exports.updateUserById = function(req, res, next) {};
+  exports.update = function(req, res, next) {
+    if (!req.body._id) {
+      req.body._id = req.params.id;
+    }
+    return UserManager.update(req.body).then((function(_this) {
+      return function(result) {
+        return responseHandler.handleSuccess(res, result);
+      };
+    })(this)).fail((function(_this) {
+      return function(err) {
+        return responseHandler.handleError(res, err);
+      };
+    })(this));
+  };
 
 }).call(this);
 

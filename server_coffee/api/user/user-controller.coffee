@@ -4,6 +4,9 @@ passport = require("passport")
 config = require("../../config/environment")
 jwt = require("jsonwebtoken")
 mailer = require("../../mailer/mail")
+actionFactory = require '../action-factory'
+UserManager = actionFactory.getActionInstance 'user'
+responseHandler = require '../response-handler'
 validationError = (res, err) ->
   res.json 422, err
 
@@ -121,4 +124,10 @@ exports.authCallback = (req, res, next) ->
 ###
 Update User
 ###
-exports.updateUserById = (req, res, next) ->
+exports.update = (req, res, next) ->
+  req.body._id = req.params.id unless req.body._id
+  UserManager.update(req.body)
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err

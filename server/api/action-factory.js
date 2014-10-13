@@ -10,6 +10,9 @@
     "publication": {
       "ClassAction": "./publication/publication-manager"
     },
+    "user": {
+      "ClassAction": "./user/user-manager"
+    },
     "category": {
       "ClassAction": "./category/category-manager"
     },

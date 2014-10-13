@@ -5,9 +5,9 @@
 
   controller = require('./user-controller');
 
-  config = require('../../config/environment/index');
+  config = require('../../config/environment');
 
-  auth = require('../../auth/auth.service.js');
+  auth = require('../../auth/auth.service');
 
   router = express.Router();
 
@@ -18,6 +18,8 @@
   router.get('/me', auth.isAuthenticated(), controller.me);
 
   router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
+
+  router.put('/:id', auth.isAuthenticated(), controller.update);
 
   router.get('/:id', auth.isAuthenticated(), controller.show);
 
