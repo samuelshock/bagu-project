@@ -25,6 +25,7 @@ angular.module 'baguApp'
       email: $scope.user.email
 
     $scope.newPersonData = angular.copy aux
+    console.log $scope.newPersonData
     $scope.isEditing = true
 
   $scope.cancel = ->
@@ -35,9 +36,13 @@ angular.module 'baguApp'
     console.log $scope.newPersonData
     Auth.update $scope.newPersonData
     .then ->
-      $scope.message = 'Person successfully changed.'
+      $scope.user.name = $scope.newPersonData.name
+      $scope.user.email = $scope.newPersonData.email
+      alert $scope.message = 'Person successfully changed.'
+      $scope.cancel()
 
     .catch ->
-      console.log 'ocurrio un error'
+      alert 'Ocurrio un error'
+      $scope.cancel()
 
 

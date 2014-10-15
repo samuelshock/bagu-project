@@ -12,16 +12,16 @@
 
     .body
       .tagui-form-label(style='font-size: large', ng-hide='isEditing') Nombre: {{user.name}}
-      .tagui-form-label(style='font-size: large', ng-hide='!isEditing') Nombre:
-      input.form-control(type='text', value='{{newPersonData.name}}', ng-hide='!isEditing')
+      .tagui-form-label(style='font-size: large', ng-hide='!isEditing') Nombre: {{newPersonData.name}}
+      input.form-control(type='text', ng-model='newPersonData.name', ng-hide='!isEditing')
       //.tagui-form-spacer
       //.tagui-form-spacer
       //.tagui-form-label Apellido: {{user.
       //input.form-control(type='text', placeholder='Enter your name')
       .tagui-form-spacer
       .tagui-form-label(style='font-size: large', ng-hide='isEditing') Email: {{user.email}}
-      .tagui-form-label(style='font-size: large', ng-hide='!isEditing') Email:
-      input.form-control(type='email', value='{{newPersonData.email}}', ng-hide='!isEditing')
+      .tagui-form-label(style='font-size: large', ng-hide='!isEditing') Email: {{newPersonData.email}}
+      input.form-control(type='email', ng-model='newPersonData.email', ng-hide='!isEditing')
       .tagui-form-spacer
       .tagui-form-spacer
       .tagui-form-spacer
