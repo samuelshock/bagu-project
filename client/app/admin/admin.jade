@@ -72,3 +72,47 @@ div(ng-switch='optionMenu')
             span {{registerDate(category.registerDate)}}
             a.trash(ng-click='delete(category)')
               span.glyphicon.glyphicon-trash.pull-right
+
+
+  .container(ng-switch-when='Arrangements', ng-controller='ArrangementsCtrl')
+    .tagui-card-w220-h80-layout(ng-if='!isOpen', ng-click='createArrangement()')
+        .highligh-font-container-animated.pointer
+            .left-header
+                .tagui-vertical-align-container
+                    .tagui-valign-middle.tagui-font-ligth.custom-add-container(style='text-align: center')
+                        .icon-add-40px
+            .right-body
+                .tagui-vertical-align-container
+                    .tagui-valign-middle.custom-label.tagui-font-semibold
+                        | Agregar Plan
+
+    .tagui-card-w220-layout(ng-model='newArrangement', ng-if='isOpen')
+        .header
+            | Formulario creacion de Plan {{newArrangement.name}}
+            .float-right.icon-close-25px.header-icon-margin.animated-opacity.pointer(ng-click='cancel()')
+        .body
+            input.form-control(type='text', placeholder='Ingresa el nombre', ng-model='newArrangement.name')
+            .tagui-form-spacer
+            textarea.form-control(type='text', placeholder='Ingresa una descripcion', ng-model='newArrangement.info', style='max-width: 180px')
+            .tagui-form-spacer
+            .tagui-form-spacer
+            input.tagui-btn.btn(type='button', value='Guardar', ng-click='saveArrangement(newArrangement)')
+            .tagui-form-spacer
+            .tagui-form-spacer
+            input.tagui-btn.btn(type='button', value='Cancelar', ng-click='cancel()')
+
+
+
+    .tagui-card-w220-layout(style='width: 400px; height: auto;')
+        .header
+            | Planes
+        .body
+            ul.list-group
+                li.list-group-item(ng-repeat='arrangement in arrangements', style='max-width: 300px')
+                    strong {{arrangement.name}}
+                    br
+                    span.text-muted {{arrangement.description}}
+                    br
+                    span {{registerDate(arrangement.registerDate)}}
+                    a.trash(ng-click='delete(arrangement)')
+                        span.glyphicon.glyphicon-trash.pull-right
