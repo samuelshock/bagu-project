@@ -4,7 +4,7 @@ div(ng-switch='optionMenu')
     li(ng-repeat='menu in menubar', ng-class='{active: checkValue(menu)}')
       a(ng-click='changeMenuOption(menu)') {{menu}}
 
-  .container(ng-switch-when='Users')
+  .container(ng-switch-when='Users', ng-controller='AdminUserCtrl')
     p
       | The delete user and user index api routes are restricted to users with the 'admin' role.
 
@@ -27,12 +27,48 @@ div(ng-switch='optionMenu')
                 br
                 | {{user.email}}
 
+  .container(ng-switch-when='Categories', ng-controller='CategoriesCtrl')
+    style
+      .custom-label{ font-size: 14px; text-align: left; padding-left: 5px; }
+      .custom-add-container{ text-align: center; }
+    .tagui-card-w220-h80-layout(ng-if='!isOpen', ng-click='createCategory()')
+      .highligh-font-container-animated.pointer
+        .left-header
+          .tagui-vertical-align-container
+            .tagui-valign-middle.tagui-font-ligth.custom-add-container(style='text-align: center')
+              .icon-add-40px
+        .right-body
+          .tagui-vertical-align-container
+            .tagui-valign-middle.custom-label.tagui-font-semibold
+              | Agregar Categoria
 
-  //ul.list-group(style='width: 400px;')
-  //  li.list-group-item(ng-repeat='user in users')
-  //
-  //    strong {{user.name}}
-  //    br
-  //    span.text-muted {{user.email}}
-  //    a.trash(ng-click='delete(user)')
-  //      span.glyphicon.glyphicon-trash.pull-right
+    .tagui-card-w220-layout(ng-model='newCategory', ng-if='isOpen')
+      .header
+        | Formulario de creacion para Categoria {{newCategory.name}}
+        .float-right.icon-close-25px.header-icon-margin.animated-opacity.pointer(ng-click='cancel()')
+      .body
+        input.form-control(type='text', placeholder='Ingresa el nombre', ng-model='newCategory.name')
+        .tagui-form-spacer
+        textarea.form-control(type='text', placeholder='Ingresa una descripcion', ng-model='newCategory.description', style='max-width: 180px')
+        .tagui-form-spacer
+        .tagui-form-spacer
+        input.tagui-btn.btn(type='button', value='Guardar', ng-click='saveCategory(newCategory)')
+        .tagui-form-spacer
+        .tagui-form-spacer
+        input.tagui-btn.btn(type='button', value='Cancelar', ng-click='cancel()')
+
+
+
+    .tagui-card-w220-layout(style='width: 400px; height: auto;')
+      .header
+        | Categorias
+      .body
+        ul.list-group
+          li.list-group-item(ng-repeat='category in categories', style='max-width: 300px')
+            strong {{category.name}}
+            br
+            span.text-muted {{category.description}}
+            br
+            span {{registerDate(category.registerDate)}}
+            a.trash(ng-click='delete(category)')
+              span.glyphicon.glyphicon-trash.pull-right
