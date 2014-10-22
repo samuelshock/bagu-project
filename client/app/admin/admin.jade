@@ -86,14 +86,20 @@ div(ng-switch='optionMenu')
                     .tagui-valign-middle.custom-label.tagui-font-semibold
                         | Agregar Plan
 
-    .tagui-card-w220-layout(ng-model='newArrangement', ng-if='isOpen')
+    .tagui-card-w220-layout(ng-model='newArrangement', style='width: 400px', ng-if='isOpen')
         .header
             | Formulario creacion de Plan {{newArrangement.name}}
             .float-right.icon-close-25px.header-icon-margin.animated-opacity.pointer(ng-click='cancel()')
         .body
-            input.form-control(type='text', placeholder='Ingresa el nombre', ng-model='newArrangement.name')
+            //input.form-control(type='text', placeholder='Ingresa el nombre', ng-model='newArrangement.name')
+            input.form-control(type='text', placeholder='Introduzca el nombre del plan (4 characters como minimo)', ng-model='newArrangement.name', required='true')
             .tagui-form-spacer
-            textarea.form-control(type='text', placeholder='Ingresa una descripcion', ng-model='newArrangement.info', style='max-width: 180px')
+            label(style='float: left; width: 150px;')  * Tiempo de vigencia (dias):
+            input.form-control(type='number',style='float: left; width: auto;padding: 0px;', popover='Introduzca el numero de dias de vigencia',popover-trigger="focus", ng-model='newArrangement.days', required='true', min='1')
+            label(style='float: left; width: 150px;')   * Precio del plan:
+            input.form-control(type='number',style='float: left; width: auto;padding: 0px;', popover="Introduzca el precio por dia del plan ejm: 1bs por dia" , popover-trigger="focus", ng-model='newArrangement.price', required='true', min='1')
+            .tagui-form-spacer
+            textarea.form-control(type='text', placeholder='Ingresa una descripcion', ng-model='newArrangement.info', style='max-width: 380px')
             .tagui-form-spacer
             .tagui-form-spacer
             input.tagui-btn.btn(type='button', value='Guardar', ng-click='saveArrangement(newArrangement)')
@@ -116,3 +122,41 @@ div(ng-switch='optionMenu')
                     span {{registerDate(arrangement.registerDate)}}
                     a.trash(ng-click='delete(arrangement)')
                         span.glyphicon.glyphicon-trash.pull-right
+
+      //#planModal.modal.fade(tabindex='-0', role='dialog', aria-labelledby='myModalLabel', aria-hidden='false', data-backdrop='static')
+      //    .modal-dialog
+      //        .modal-content
+      //            .modal-header
+      //                button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+      //                div(ng-switch='ng-switch', on='createOrUpdate')
+      //                    h4.modal-title(ng-switch-when='create') Agregar Nuevo Plan
+      //                    h4.modal-title(ng-switch-when='update') Actualizar Plan
+      //            .modal-body
+      //                form#addPlanForm(role='form')
+      //                    .modal-body
+      //                        .form-group
+      //                            label  * Nombre del Plan:
+      //                            .controls
+      //                                input.form-control(type='text', placeholder='Introduzca el nombre del plan (4 characters como minimo)', ng-model='plan.name', required='true')
+      //                        .form-group
+      //                            label  * Descripcion del Plan:
+      //                            .controls
+      //                                input.form-control(type='text', placeholder='Descripcion del plan', ng-model='plan.description', required='true')
+      //                        .form-group
+      //                            label  * Tiempo de vigencia (dias):
+      //                            .controls
+      //                                input.form-control(type='number', placeholder='Introduzca el numero de dias de vigencia', ng-model='plan.validateDays', required='true', min='1')
+      //                        .form-group
+      //                            label  * Precio del plan:
+      //                            .controls
+      //                                input.form-control(type='number', placeholder='Introduzca el precio del plan', ng-model='plan.price', required='true', min='0')
+      //                        .form-group
+      //                            .alert.alert-danger(ng-show='isAnyError') {{errorMessage}}
+      //                    .modal-footer
+      //                        div(ng-switch='ng-switch', on='createOrUpdate')
+      //                            div(ng-switch-when='create')
+      //                                button.btn.btn-primary(type='submit', ng-click='saveNewPlan()') Guardar
+      //                                button.btn.btn-default(type='button', data-dismiss='modal', ng-click='cancelCreate()') Cancelar
+      //                            div(ng-switch-when='update')
+      //                                button.btn.btn-primary(type='submit', ng-click='updatePlan()') Actualizar
+      //                                button.btn.btn-default(type='button', data-dismiss='modal', ng-click='cancelUpdate()') Cancelar

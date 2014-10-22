@@ -1,4 +1,5 @@
 mongoose = require("mongoose")
+SHA256 = require 'crypto-js/sha256'
 Schema = mongoose.Schema
 commentSchema = new Schema(
   comment:
@@ -12,6 +13,28 @@ commentSchema = new Schema(
   person:
     type: Schema.Types.ObjectId
     ref: "User"
+)
+
+plan = new Schema(
+
+  arrangement:
+    type: Schema.Types.ObjectId
+    ref: "Arrangement"
+    
+  register_date:
+    type: Date
+    default: new Date()
+
+  activation_hash:
+    type: String
+    default: SHA256("#{@register_date}#{@publicationId}")
+
+  activation_date:
+    type: Date
+
+  end_date:
+    type: Date
+
 )
 starsSchema = new Schema(
   votes:

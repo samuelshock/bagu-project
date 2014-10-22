@@ -1,4 +1,3 @@
-SHA256 = require 'crypto-js/sha256'
 mongoose = require 'mongoose'
 Schema = mongoose.Schema
 ArrangementSchema = new Schema(
@@ -12,11 +11,6 @@ ArrangementSchema = new Schema(
     type: String
     required: true
 
-  publicationId:
-    type: Schema.Types.ObjectId
-    ref: "Publication"
-#    required: true
-
   active:
     type: Boolean
     default: false
@@ -25,18 +19,16 @@ ArrangementSchema = new Schema(
     type: Date
     default: new Date()
 
-  activation_hash:
-    type: String
-    default: SHA256("#{@register_date}#{@publicationId}")
-
-  activation_date:
-    type: Date
-
-  end_date:
-    type: Date
-
   price:
     type: Number
+
+  total_price:
+    type: Number
+    default: (@price * @days)
+
+  days:
+    type: Number
+    default: 1
 
   configuration: {}
 )
