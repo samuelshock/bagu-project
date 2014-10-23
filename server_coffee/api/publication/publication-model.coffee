@@ -27,7 +27,7 @@ plan = new Schema(
 
   activation_hash:
     type: String
-    default: SHA256("#{@register_date}#{@publicationId}")
+    default: SHA256("#{@register_date}#{@arrangement}")
 
   activation_date:
     type: Date

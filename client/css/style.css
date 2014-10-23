@@ -74,7 +74,7 @@ html, body{
 }
 .container.header-top {
   height:10%;
-  min-height: 110px;
+  /*min-height: 110px;*/
   /*background-color: green;*/
   width: 100%;
   padding-left: 0px;
