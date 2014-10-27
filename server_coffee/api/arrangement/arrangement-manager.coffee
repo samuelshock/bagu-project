@@ -17,8 +17,10 @@ class ArrangementManager
   findById: (id) ->
     @arrangementManager.findById id
 
-  create: (map) ->
-    @arrangementManager.create map
+  create: (arrangement) ->
+    total_price = arrangement.price * arrangement.days
+    arrangement.total_price = total_price
+    @arrangementManager.create arrangement
 
   update: (newData) ->
     @arrangementManager.update newData

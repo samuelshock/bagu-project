@@ -12,7 +12,7 @@ Main application file
 
   mongoose = require("mongoose");
 
-  config = require("./config/environment/index");
+  config = require("./config/environment");
 
   mongoose.connect(config.mongo.uri, config.mongo.options);
 

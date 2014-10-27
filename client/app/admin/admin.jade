@@ -44,7 +44,7 @@ div(ng-switch='optionMenu')
 
     .tagui-card-w220-layout(ng-model='newCategory', ng-if='isOpen')
       .header
-        | Formulario de creacion para Categoria {{newCategory.name}}
+        | Formulario de creacion
         .float-right.icon-close-25px.header-icon-margin.animated-opacity.pointer(ng-click='cancel()')
       .body
         input.form-control(type='text', placeholder='Ingresa el nombre', ng-model='newCategory.name')
@@ -76,52 +76,54 @@ div(ng-switch='optionMenu')
 
   .container(ng-switch-when='Arrangements', ng-controller='ArrangementsCtrl')
     .tagui-card-w220-h80-layout(ng-if='!isOpen', ng-click='createArrangement()')
-        .highligh-font-container-animated.pointer
-            .left-header
-                .tagui-vertical-align-container
-                    .tagui-valign-middle.tagui-font-ligth.custom-add-container(style='text-align: center')
-                        .icon-add-40px
-            .right-body
-                .tagui-vertical-align-container
-                    .tagui-valign-middle.custom-label.tagui-font-semibold
-                        | Agregar Plan
+      .highligh-font-container-animated.pointer
+        .left-header
+          .tagui-vertical-align-container
+            .tagui-valign-middle.tagui-font-ligth.custom-add-container(style='text-align: center')
+              .icon-add-40px
+        .right-body
+          .tagui-vertical-align-container
+            .tagui-valign-middle.custom-label.tagui-font-semibold
+              | Agregar Plan
 
     .tagui-card-w220-layout(ng-model='newArrangement', style='width: 400px', ng-if='isOpen')
-        .header
-            | Formulario creacion de Plan {{newArrangement.name}}
-            .float-right.icon-close-25px.header-icon-margin.animated-opacity.pointer(ng-click='cancel()')
-        .body
-            //input.form-control(type='text', placeholder='Ingresa el nombre', ng-model='newArrangement.name')
-            input.form-control(type='text', placeholder='Introduzca el nombre del plan (4 characters como minimo)', ng-model='newArrangement.name', required='true')
-            .tagui-form-spacer
-            label(style='float: left; width: 150px;')  * Tiempo de vigencia (dias):
-            input.form-control(type='number',style='float: left; width: auto;padding: 0px;', popover='Introduzca el numero de dias de vigencia',popover-trigger="focus", ng-model='newArrangement.days', required='true', min='1')
-            label(style='float: left; width: 150px;')   * Precio del plan:
-            input.form-control(type='number',style='float: left; width: auto;padding: 0px;', popover="Introduzca el precio por dia del plan ejm: 1bs por dia" , popover-trigger="focus", ng-model='newArrangement.price', required='true', min='1')
-            .tagui-form-spacer
-            textarea.form-control(type='text', placeholder='Ingresa una descripcion', ng-model='newArrangement.info', style='max-width: 380px')
-            .tagui-form-spacer
-            .tagui-form-spacer
-            input.tagui-btn.btn(type='button', value='Guardar', ng-click='saveArrangement(newArrangement)')
-            .tagui-form-spacer
-            .tagui-form-spacer
-            input.tagui-btn.btn(type='button', value='Cancelar', ng-click='cancel()')
-
-
+      .header
+        | Formulario creacion de Plan {{newArrangement.name}}
+        .float-right.icon-close-25px.header-icon-margin.animated-opacity.pointer(ng-click='cancel()')
+      .body
+        //input.form-control(type='text', placeholder='Ingresa el nombre', ng-model='newArrangement.name')
+        input.form-control(type='text', placeholder='Introduzca el nombre del plan (4 characters como minimo)', ng-model='newArrangement.name', required='true')
+        .tagui-form-spacer
+        label(style='float: left; width: 150px;')  * Tiempo de vigencia (dias):
+        input.form-control(type='number',style='float: left; width: auto;padding: 0px;', popover='Introduzca el numero de dias de vigencia',popover-trigger="focus", ng-model='newArrangement.days', required='true', min='1')
+        label(style='float: left; width: 150px;')   * Precio del plan:
+        input.form-control(type='number',style='float: left; width: auto;padding: 0px;', popover="Introduzca el precio por dia del plan ejm: 1bs por dia" , popover-trigger="focus", ng-model='newArrangement.price', required='true', min='1')
+        .tagui-form-spacer
+        textarea.form-control(type='text', placeholder='Ingresa una descripcion', ng-model='newArrangement.info', style='max-width: 380px')
+        .tagui-form-spacer
+        .tagui-form-spacer
+        input.tagui-btn.btn(type='button', value='Guardar', ng-click='saveArrangement(newArrangement)')
+        .tagui-form-spacer
+        .tagui-form-spacer
+        input.tagui-btn.btn(type='button', value='Cancelar', ng-click='cancel()')
 
     .tagui-card-w220-layout(style='width: 400px; height: auto;')
-        .header
-            | Planes
-        .body
-            ul.list-group
-                li.list-group-item(ng-repeat='arrangement in arrangements', style='max-width: 300px')
-                    strong {{arrangement.name}}
-                    br
-                    span.text-muted {{arrangement.description}}
-                    br
-                    span {{registerDate(arrangement.registerDate)}}
-                    a.trash(ng-click='delete(arrangement)')
-                        span.glyphicon.glyphicon-trash.pull-right
+      .header
+        | Planes
+      .body
+        ul.list-group
+          li.list-group-item(ng-repeat='arrangement in arrangements', style='max-width: 300px')
+            strong {{arrangement.name}}
+            br
+            span.text-muted {{arrangement.info}}
+            br
+            span.text-muted Precio: {{arrangement.total_price}}
+            br
+            span.text-muted Dias: {{arrangement.days}}
+            br
+            span {{registerDate(arrangement.register_date)}}
+            a.trash(ng-click='delete(arrangement)')
+              span.glyphicon.glyphicon-trash.pull-right
 
       //#planModal.modal.fade(tabindex='-0', role='dialog', aria-labelledby='myModalLabel', aria-hidden='false', data-backdrop='static')
       //    .modal-dialog

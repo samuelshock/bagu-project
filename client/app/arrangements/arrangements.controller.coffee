@@ -9,10 +9,14 @@ angular.module 'baguApp'
     return new Date(date)
 
   $scope.saveArrangement = (newData) ->
-    if validateFields
+    if validateFields(newData)
+      newData.price = 0 if newData.price is undefined
       Arrangements.create newData, (result) ->
         $scope.arrangements.push result
         $scope.isOpen = false
+      , (error) ->
+        console.log error
+        alert 'error'
 
   $scope.isOpen = false
 
@@ -25,11 +29,15 @@ angular.module 'baguApp'
   validateFields = (data) ->
     if data is undefined
       alert 'Ingrese algun valor'
-      false
+      return false
 
     if data.name is undefined
       alert 'Ingrese algun valor'
-      false
+      return false
+
+    if data.days is undefined
+      alert 'Ingrese un numero de dias'
+      return false
     else
       true
 

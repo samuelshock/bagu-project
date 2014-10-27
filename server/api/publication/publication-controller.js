@@ -74,6 +74,21 @@
     })(this));
   };
 
+  exports.updateStarsComments = function(req, res) {
+    if (!req.body._id) {
+      req.body._id = req.params.id;
+    }
+    return Publication.updateStarsComment(req.body).then((function(_this) {
+      return function(result) {
+        return responseHandler.handleSuccess(res, result);
+      };
+    })(this)).fail((function(_this) {
+      return function(err) {
+        return responseHandler.handleError(res, err);
+      };
+    })(this));
+  };
+
 }).call(this);
 
 //# sourceMappingURL=publication-controller.js.map

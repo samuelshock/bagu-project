@@ -7,7 +7,11 @@
 
   CategorySchema = new Schema({
     name: {
-      type: String
+      type: String,
+      lowercase: true,
+      trim: true,
+      unique: true,
+      required: true
     },
     description: {
       type: String

@@ -54,6 +54,19 @@
 
           li(ng-show='isAdmin()', ng-class='{active: isActive("/admin")}')
             a(href='/admin') Admin
+
+          li.dropdown(style='text-transform: capitalize;font-weight: 900;')
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+              span.glyphicon.glyphicon-map-marker(style='text-transform: capitalize; word-spacing: -12px;font-weight: 900;') {{city}}
+            ul.dropdown-menu(role='menu')
+              li(ng-repeat='op in cities')
+                a(ng-click='changeCity(op.nombre)') {{op.nombre}}
+              //li.dropdown(ng-repeat='op in cities')
+              //  a.dropdown-toggle {{op.nombre}}
+              //  ul.dropdown-menu(role='menu')
+              //    li(ng-repeat='prov in op.provincias')
+              //      a {{prov}}
+
         form.navbar-form.navbar-left(role='search')
           //.form-group(style='width: 400px;')
           .form-group
@@ -76,21 +89,9 @@
             ul.dropdown-menu(role='menu')
               //li
               //  a(href='/settings') cambiar password
-              li
-                a(href='/profile') Perfil
-              //li
-              //  a(href='#') Something else here
-              //li.divider
-              //li
-              //  a(href='#') Separated link
-              //li.divider
-              //li
-              //  a(href='#') One more separated link
-
-          //
-          //li(ng-show='isLoggedIn()', ng-class='{active: isActive("/settings")}')
-          //  a(href='/settings')
-          //    span.glyphicon.glyphicon-cog
+              li(ng-repeat='menu in menus')
+                a(href='{{menu.link}}', class="{{menu.class}}")
+                  | {{menu.title}}
 
           li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
             a(href='', ng-click='logout()') Salir

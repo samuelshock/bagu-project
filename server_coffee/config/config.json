@@ -1,0 +1,28 @@
+{
+  "cities": [
+    {
+      "nombre": "cochabamba",
+      "provincias": [
+        "quillacollo",
+        "sacaba"
+      ]
+    },
+    {
+      "nombre": "santa cruz",
+      "provincias": [
+        "primer anillo",
+        "segundo anillo",
+        "los pozos"
+      ]
+    },
+    {
+      "nombre": "la paz",
+      "provincias": [
+        "miraflores",
+        "san pedro",
+        "san miguel"
+      ]
+    }
+
+  ]
+}

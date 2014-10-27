@@ -4,18 +4,21 @@ Main application routes
  */
 
 (function() {
-  var errors;
+  var conf, errors;
 
-  errors = require("./components/errors/index");
+  errors = require("./components/errors");
+
+  conf = require('./config/config.json');
 
   module.exports = function(app) {
-    app.use('/api/arrangements', require('./api/arrangement/index'));
-    app.use('/api/places', require('./api/place/index'));
-    app.use("/api/maps", require("./api/map/index"));
-    app.use("/api/publications", require("./api/publication/index"));
-    app.use("/api/categories", require("./api/category/index"));
-    app.use("/api/users", require("./api/user/index"));
-    app.use("/auth", require("./auth/index"));
+    app.use('/api/arrangements', require('./api/arrangement'));
+    app.use('/api/places', require('./api/place'));
+    app.use("/api/maps", require("./api/map"));
+    app.use("/api/publications", require("./api/publication"));
+    app.use("/api/categories", require("./api/category"));
+    app.use("/api/users", require("./api/user"));
+    app.use("/auth", require("./auth"));
+    app.use("/api/configuration", require("./api/configuration"));
     app.route("/:url(api|auth|components|app|bower_components|assets)/*").get(errors[404]);
     return app.route("/*").get(function(req, res) {
       return res.sendfile(app.get("appPath") + "/index.html");

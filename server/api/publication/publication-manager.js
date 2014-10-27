@@ -21,7 +21,7 @@
 
   isActive = 'isActive';
 
-  BASIC_INFO = "name city province priority stars date isActive images";
+  BASIC_INFO = "name city province priority stars date isActive images rating";
 
   SHORT_INFO = "" + BASIC_INFO + " shortDescription";
 
@@ -29,7 +29,7 @@
 
   PublicationManager = (function() {
     function PublicationManager() {
-      this.publicationManager = BaseManager(PublicationModel);
+      this.publicationManager = new BaseManager(PublicationModel);
       console.log('instance of publication');
     }
 
@@ -146,25 +146,50 @@
      */
 
     PublicationManager.prototype.createPublication = function(publication) {
-      var deferred;
+      var deferred, map;
       deferred = Q.defer();
-      this.publicationManager.create(publication).then((function(_this) {
-        return function(publication) {
-          if (err) {
-            deferred.reject(err);
-          }
-          return User.findById(publication.owner, function(err, user) {
-            if (err) {
-              deferred.reject(err);
-            }
-            return user.addPublication(publication).then(function(user) {
-              return deferred.resolve(publication);
-            });
-          });
+      if (publication.map) {
+        map = {
+          latitude: publication.map.lat,
+          longitude: publication.map.lng,
+          zoom: publication.map.zoom,
+          isSelected: publication.map.isSelected
         };
-      })(this)).fail(function(error) {
-        return deferred.reject(error);
-      });
+        MapManager.create(map).then((function(_this) {
+          return function(resMap) {
+            publication.map = resMap._id;
+            return _this.publicationManager.create(publication);
+          };
+        })(this)).then((function(_this) {
+          return function(publication) {
+            return User.findById(publication.owner, function(err, user) {
+              if (err) {
+                deferred.reject(err);
+              }
+              return user.addPublication(publication);
+            });
+          };
+        })(this)).then(function(user) {
+          return deferred.resolve(publication);
+        }).fail(function(error) {
+          return deferred.reject(error);
+        });
+      } else {
+        this.publicationManager.create(publication).then((function(_this) {
+          return function(publication) {
+            return User.findById(publication.owner, function(err, user) {
+              if (err) {
+                deferred.reject(err);
+              }
+              return user.addPublication(publication).then(function(user) {
+                return deferred.resolve(publication);
+              });
+            });
+          };
+        })(this)).fail(function(error) {
+          return deferred.reject(error);
+        });
+      }
       return deferred.promise;
     };
 
@@ -189,6 +214,39 @@
           });
         }
         updated = _.merge(publication, publicationUpdated);
+        return updated.save(function(err) {
+          if (err) {
+            deferred.reject(err);
+          }
+          return deferred.resolve(publication);
+        });
+      });
+      return deferred.promise;
+    };
+
+    PublicationManager.prototype.updateStarsComment = function(publicationUpdated) {
+      var deferred;
+      deferred = Q.defer();
+      PublicationModel.findById(publicationUpdated._id, function(err, publication) {
+        var updated;
+        delete publicationUpdated._id;
+        if (err) {
+          deferred.reject(err);
+        }
+        if (!publication) {
+          deferred.reject({
+            statusCode: 404
+          });
+        }
+        if (publicationUpdated.stars) {
+          publication.stars.push(publicationUpdated.stars);
+          delete publicationUpdated.stars;
+        }
+        if (publicationUpdated.comments) {
+          publication.comments.push(publicationUpdated.comments);
+          delete publicationUpdated.comment;
+        }
+        updated = publication;
         return updated.save(function(err) {
           if (err) {
             deferred.reject(err);

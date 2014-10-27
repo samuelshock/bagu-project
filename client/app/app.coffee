@@ -6,7 +6,8 @@ angular.module 'baguApp', [
   'ngSanitize',
   'ngRoute',
   'btford.socket-io',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngTagsInput'
 ]
 .config ($routeProvider, $locationProvider, $httpProvider) ->
   $routeProvider

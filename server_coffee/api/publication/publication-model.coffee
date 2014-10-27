@@ -94,6 +94,8 @@ PublicationSchema = new Schema(
 
   stars: [ starsSchema ]
 
+  rating: Number
+
   comments: [ commentSchema ]
 
   images: [
@@ -105,7 +107,10 @@ PublicationSchema = new Schema(
     type: Date
     default: Date.now
 
-  isActive: Boolean
+  isActive:
+    type: Boolean
+    default: false
+
 
   city:
     type: String
@@ -123,8 +128,22 @@ PublicationSchema = new Schema(
     type: Number
     default: 3
 
-  arrangement:
-    type: Schema.Types.ObjectId
-    ref: 'Arrangement'
+  arrangement:[plan]
 )
+
+starsCalc = (stars) ->
+  prom = stars.length
+  if prom <= 0
+    return 1
+  else
+    count = 0
+    for n in stars
+      count += n.votes
+    return count/prom
+  return 1
+
+PublicationSchema.pre "save", (next) ->
+  @rating = starsCalc(@stars)
+  next()
+
 module.exports = mongoose.model("Publication", PublicationSchema)

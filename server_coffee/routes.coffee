@@ -2,6 +2,8 @@
 Main application routes
 ###
 errors = require("./components/errors")
+
+conf = require './config/config.json'
 module.exports = (app) ->
 
   # Insert routes below
@@ -12,6 +14,7 @@ module.exports = (app) ->
   app.use "/api/categories", require("./api/category")
   app.use "/api/users", require("./api/user")
   app.use "/auth", require("./auth")
+  app.use "/api/configuration", require("./api/configuration")
 
   # All undefined asset or api routes should return a 404
   app.route("/:url(api|auth|components|app|bower_components|assets)/*").get errors[404]

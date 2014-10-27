@@ -9,6 +9,8 @@
   PlaceSchema = new Schema({
     name: {
       type: String,
+      trim: true,
+      unique: true,
       required: true
     },
     sites: [

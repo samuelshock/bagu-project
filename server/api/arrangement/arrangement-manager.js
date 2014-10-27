@@ -27,8 +27,14 @@
       return this.arrangementManager.findById(id);
     };
 
-    ArrangementManager.prototype.create = function(map) {
-      return this.arrangementManager.create(map);
+    ArrangementManager.prototype.create = function(arrangement) {
+      var total_price;
+      total_price = arrangement.price * arrangement.days;
+      if (isNaN(total_price)) {
+        total_price = 0;
+      }
+      arrangement.total_price = total_price;
+      return this.arrangementManager.create(arrangement);
     };
 
     ArrangementManager.prototype.update = function(newData) {

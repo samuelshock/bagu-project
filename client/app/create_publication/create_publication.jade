@@ -1,0 +1,180 @@
+.col-md-12
+  .tagui-card-w220-h80-layout(ng-if='!isOpen', ng-click='createPublication()')
+    .highligh-font-container-animated.pointer
+      .left-header
+        .tagui-vertical-align-container
+          .tagui-valign-middle.tagui-font-ligth.custom-add-container(style='text-align: center')
+            .icon-add-40px
+      .right-body
+        .tagui-vertical-align-container
+          .tagui-valign-middle.custom-label.tagui-font-semibold
+            | Agregar Publicacion
+
+  .tagui-card-w220-layout(ng-model='newPublication', style='width: 400px', ng-if='isOpen')
+    .header
+      | Formulario creacion de Publicacion {{newPublication.name}}
+      .float-right.icon-close-25px.header-icon-margin.animated-opacity.pointer(ng-click='cancel()')
+    .body
+      input.form-control(type='text', placeholder='Introduzca el nombre de la publicacion', ng-model='newPublication.name', required='true')
+      .tagui-form-spacer
+      textarea.form-control(type='text', placeholder='Ingresa una pequeña descripcion', ng-model='newPublication.shortDescription', style='max-width: 380px')
+      .tagui-form-spacer
+      textarea.form-control(type='text', placeholder='Ingresa la descripcion', ng-model='newPublication.description', style='max-width: 380px')
+      .tagui-form-spacer
+      input.form-control(type='text', popover-placement="right", popover='Introduzca la direccion', popover-trigger="mouseenter", placeholder='Direccion',ng-model='newPublication.address', required='true')
+      .tagui-form-spacer
+      input.form-control(type='text', popover-placement="right", popover='Introduzca la pagina web', popover-trigger="mouseenter", placeholder='Pagina Web', ng-model='newPublication.web_site')
+      .tagui-form-spacer
+      input.form-control(type='text', popover-placement="right", popover='Introduzca los telefonos de referencia separados por una coma (,)', popover-trigger="mouseenter", placeholder='Telefono', ng-model='newPublication.phone', required='true')
+      .tagui-form-spacer
+      tags-input(ng-model='tags', class="bootstrap")
+        //auto-complete(source='loadTags($query)')
+      .tagui-form-spacer
+
+      .tagui-form-spacer
+      label Elija su departamento
+      br
+      label(style='margin-right: 5px;') Departamento:
+      span.dropdown(on-toggle='toggled(open)',style='margin-right: 5px;')
+        a.dropdown-toggle
+          | {{city.nombre}}
+        ul.dropdown-menu
+          li(ng-repeat='choice in cities')
+            a(ng-click='changeCity(choice)') {{choice.nombre}}
+
+      div(ng-show='city.provincias')
+        label(style='margin-right: 5px;') Provincia:
+        span.dropdown(on-toggle='toggled(open)')
+          a.dropdown-toggle
+            | {{province}}
+          ul.dropdown-menu
+            li(ng-repeat='choice in city.provincias')
+              a(ng-click='changeProvince(choice)') {{choice}}
+      .tagui-form-spacer
+      span.glyphicon.glyphicon-map-marker(ng-click='addMap()') {{mapStatus}}
+      div(style='position: relative')
+        .map(ng-hide='!openMap')
+          .google-map(location-map, model='location')
+          button.btn(ng-click='setBasedOnAddress(location, address)', style='margin: 5px;') Buscar
+          input(type='text', popover-placement="top", popover='Si desea buscar una direccion presione -> Buscar', popover-trigger="mouseenter", placeholder='ej. cochabamba, av. america', ng-model='address', style='width: 270px;')
+          br
+          button.btn(ng-click='addMap()', popover-placement="right", popover='click Aqui! Si desea guardar la direccion', popover-trigger="mouseenter", style='margin: 5px;') Guardar
+          label {{location}}
+      .tagui-form-spacer
+      .tagui-form-spacer
+
+
+      input.tagui-btn.btn(type='button', value='Guardar', ng-click='savePublication(newPublication)')
+      .tagui-form-spacer
+
+  .card-container(ng-repeat='cData in publications')
+    .db
+      div(id='block-{{cData._id}}').block
+        .front.side
+          img(ng-src='uploadImage/{{cData.images[0]}}', width='250', height='210', alt='', href='#/seacher/{{cData._id}}')
+          .description
+            .goback(ng-click='changeClass(cData._id)') Ver detalles
+            .title(ng-click='selectPublish(cData._id)') {{cData.name}}
+            .title.starts
+              //rating(value='(cData.stars[0].votes/cData.stars[0].peoplevotes)', max='5', readonly='true', on-hover='hoveringOver(value)', on-leave='overStar = null')
+              rating(ng-model='cData.rating', max='5', readonly='true', on-leave='overStar = null')
+        .back.side
+          .goback(ng-click='changeClass(cData._id)') Done
+          .title-back {{cData.name}}
+          hr
+          .description-back {{cData.shortDescription}}
+          hr
+          .address-back Address: {{cData.city}} {{cData.province}} {{cData.address}}
+          .phone(ng-show='cData.phone') {{cData.phone}}
+          //rating(value='(cData.stars[0].votes/cData.stars[0].peoplevotes)', max='5', readonly='true', on-hover='hoveringOver(value)', on-leave='overStar = null')
+
+
+  //tags-input(ng-model='tags', class="bootstrap")
+  //  auto-complete(source='loadTags($query)')
+
+  //.container
+  //  .bs-example
+  //    ul.nav.nav-pills
+  //      li(class='{{step1.active}}',ng-click="nexStep('step1')")
+  //        a Crear Publicacion
+  //      li(class='{{step3.active}}',ng-click="nexStep('step2')")
+  //        a Huvicacion
+  //      li(class='{{step2.active}}',ng-click="nexStep('step3')")
+  //        a Subir Imagenes
+  //      li(class='{{step4.active}}',ng-click="nexStep('step4')")
+  //        a Publicar
+  //    div(ng-switch='ng-switch', on='step')
+  //      //div(ng-switch-when='step1')
+  //      div(style='widht:300px')
+  //        .form-group
+  //          input.form-control(type='text', ng-model='name.value', placeholder='Ingrese el Nombre de la publicacion')
+  //        .form-group
+  //          input.form-control(type='text', ng-model='address.value', placeholder='Ingrese la direccion ')
+  //        .form-group
+  //          input.form-control(type='text', ng-model='phone.value', placeholder='Ingrese el Telefono ')
+  //        .form-group
+  //          label Ingrese una pequena descripcion
+  //          textarea.form-control(ng-model='shortdescription.value', rows='3')
+  //        .form-group.dropdown
+  //          input.form-control.dropdown-toggle(ng-model='city.value', type='text', placeholder='Ingrese la Ciudad de la publicacion ')
+  //          ul.dropdown-menu
+  //            li(ng-repeat='choice in cities')
+  //              a(ng-click='choiceCity(choice.name)') {{choice.name}}
+  //        .form-group.dropdown
+  //          input.form-control.dropdown-toggle(ng-model='province.value', type='text', placeholder='Ingrese la provincia de la publicacion ')
+  //          ul.dropdown-menu
+  //            li(ng-repeat='choice in provinces')
+  //              a(ng-click='choiceProvince(choice)') {{choice}}
+  //        .form-group
+  //          label Ingrese la Descripcion
+  //          textarea.form-control(ng-model='description.value', rows='3', placeholder='Puede ingresar precios, lista de productos, lo que usted quiera mostrar en su publicacion')
+  //        .form-group
+  //          label Escoja una categoria
+  //          .form-group.dropdown
+  //            input.form-control.dropdown-toggle(ng-model='category', type='text', placeholder='Escoja una categoria para su publicacion')
+  //            ul.dropdown-menu
+  //              li(ng-repeat='choice in categories')
+  //                a(ng-click='choiceCategory(choice.name)') {{choice.name}}
+  //        .form-group
+  //          label
+  //            | Ingrese tags para que puedan encontrar su publicacion separadas por una ',' coma
+  //            b ejemplo:
+  //            | (comida, tacos, tortilla)
+  //          .form-group.dropdown
+  //            input.form-control.dropdown-toggle(ng-model='tags.value', type='text', placeholder='ingrese tags separados por una coma')
+  //        .bs-example
+  //          ul.pager
+  //            li
+  //              a(ng-click="nexStep('step2')") Siguiente
+  //      //div(ng-switch-when='step2')
+  //      div
+  //        h1 Busca tu publicacion en el mapa y guarda
+  //        .google-map(location-edit='location-edit', model='location')
+  //        input(type='text', ng-model='address.value')
+  //        button.btn(ng-click='setBasedOnAddress(location, address.value)', style='margin: 5px;') Set based on this address
+  //        button.btn.btn-danger.btn-lg.btn-success(type='button', ng-click='savePlace()') Guardar Huvicacion
+  //        ul.pager
+  //          li
+  //            a(ng-click="nexStep('step1')") Atras
+  //          li
+  //            a(ng-click="nexStep('step3')") Siguiente
+  //      //div(ng-switch-when='step3')
+  //      div
+  //        .container
+  //          input.input-file-directive.footer(type='file', accept='image/jpeg, image/png', upload-file='upload-file', ids='ids', images='images')
+  //          img#newImages1.box(width='200', height='200')
+  //          .box(ng-repeat='image in ids')
+  //            img#newImages(class='{{image}}', width='200', height='200')
+  //        .bs-example
+  //          ul.pager
+  //            li
+  //              a(ng-click="nexStep('step2')") Atras
+  //            li
+  //              a(ng-click="nexStep('step4')") Siguiente
+  //      //div(ng-switch-when='step4')
+  //      div
+  //        button(type='button', ng-click='save()') Save and Publish
+  //        .bs-example
+  //          ul.pager
+  //            li
+  //              a(ng-click="nexStep('step3')") Previous

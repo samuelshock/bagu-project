@@ -54,7 +54,13 @@ exports.destroy = (req, res) ->
   .fail (err) =>
     responseHandler.handleError res, err
 
-
+exports.updateStarsComments = (req, res) ->
+  req.body._id = req.params.id unless req.body._id
+  Publication.updateStarsComment(req.body)
+  .then (result) =>
+    responseHandler.handleSuccess res, result
+  .fail (err) =>
+    responseHandler.handleError res, err
 
 
 #exports.destroy = (req, res) ->

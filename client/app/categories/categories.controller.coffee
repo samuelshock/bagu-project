@@ -4,7 +4,6 @@ angular.module 'baguApp'
 .controller 'CategoriesCtrl', ($scope, Categories) ->
 
   $scope.categories = Categories.query()
-  console.log $scope.categories
 
   $scope.registerDate = (date) ->
     return new Date(date)

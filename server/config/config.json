@@ -1,0 +1,35 @@
+{
+  "cities": [
+    {
+      "nombre": "cochabamba",
+      "provincias": [
+        "quillacollo",
+        "sacaba"
+      ]
+    },
+    {
+      "nombre": "santa cruz",
+      "provincias": [
+        "primer anillo",
+        "segundo anillo",
+        "los pozos"
+      ]
+    },
+    {
+      "nombre": "la paz",
+      "provincias": [
+        "miraflores",
+        "san pedro",
+        "san miguel"
+      ]
+    }
+
+  ],
+  "tags": [
+    { "text": "pollo" },
+    { "text": "musica" },
+    { "text": "comida criolla" },
+    { "text": "comida rapida" },
+    { "text": "helados" }
+  ]
+}

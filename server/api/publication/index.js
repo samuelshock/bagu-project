@@ -15,6 +15,8 @@
 
   router.put('/:id', controller.update);
 
+  router.put('/:id/comments', controller.updateStarsComments);
+
   router.patch('/:id', controller.update);
 
   router["delete"]('/:id', controller.destroy);

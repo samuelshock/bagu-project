@@ -11,7 +11,7 @@ Q = require 'q'
 SORT_BY_PRIORITY = 'priority'
 SORT_BY_DATE = 'date'
 isActive = 'isActive'
-BASIC_INFO = "name city province priority stars date isActive images"
+BASIC_INFO = "name city province priority stars date isActive images rating"
 SHORT_INFO = "#{BASIC_INFO} shortDescription"
 ALL_INFO = "#{BASIC_INFO} description phone tags map comments comments.person"
 
@@ -19,7 +19,7 @@ ALL_INFO = "#{BASIC_INFO} description phone tags map comments comments.person"
 class PublicationManager
 
   constructor: ->
-    @publicationManager = BaseManager PublicationModel
+    @publicationManager = new BaseManager PublicationModel
     console.log 'instance of publication'
 
 
@@ -118,17 +118,34 @@ class PublicationManager
   ###
   createPublication: (publication) ->
     deferred = Q.defer()
-
-    @publicationManager.create(publication)
-    .then (publication) =>
-      deferred.reject err if err
-      User.findById publication.owner, (err, user) =>
-        deferred.reject err if err
-        user.addPublication(publication)
-        .then (user) ->
-          deferred.resolve publication
-    .fail (error) ->
-          deferred.reject error
+    if publication.map
+      map =
+        latitude: publication.map.lat
+        longitude: publication.map.lng
+        zoom: publication.map.zoom
+        isSelected: publication.map.isSelected
+      MapManager.create(map)
+      .then (resMap) =>
+        publication.map = resMap._id
+        @publicationManager.create(publication)
+      .then (publication) =>
+        User.findById publication.owner, (err, user) =>
+          deferred.reject err if err
+          user.addPublication(publication)
+      .then (user) ->
+        deferred.resolve publication
+      .fail (error) ->
+        deferred.reject error
+    else
+      @publicationManager.create(publication)
+      .then (publication) =>
+        User.findById publication.owner, (err, user) =>
+          deferred.reject err if err
+          user.addPublication(publication)
+          .then (user) ->
+            deferred.resolve publication
+      .fail (error) ->
+            deferred.reject error
     deferred.promise
 
   ###
@@ -146,6 +163,26 @@ class PublicationManager
         deferred.reject err  if err
         deferred.resolve publication
     deferred.promise
+
+
+  updateStarsComment: (publicationUpdated) ->
+    deferred = Q.defer()
+    PublicationModel.findById publicationUpdated._id, (err, publication) ->
+      delete publicationUpdated._id
+      deferred.reject err if err
+      deferred.reject statusCode: 404  unless publication
+      if publicationUpdated.stars
+        publication.stars.push publicationUpdated.stars
+        delete publicationUpdated.stars
+      if publicationUpdated.comments
+        publication.comments.push publicationUpdated.comments
+        delete publicationUpdated.comment
+      updated = publication
+      updated.save (err) ->
+        deferred.reject err  if err
+        deferred.resolve publication
+    deferred.promise
+
 
   ###
   Deletes a publication

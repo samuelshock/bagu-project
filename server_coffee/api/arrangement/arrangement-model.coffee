@@ -21,10 +21,11 @@ ArrangementSchema = new Schema(
 
   price:
     type: Number
+    required: true
 
   total_price:
     type: Number
-    default: (@price * @days)
+    default: 0
 
   days:
     type: Number
@@ -32,4 +33,6 @@ ArrangementSchema = new Schema(
 
   configuration: {}
 )
+
+
 module.exports = mongoose.model("Arrangement", ArrangementSchema)
